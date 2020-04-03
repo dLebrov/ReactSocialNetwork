@@ -1,0 +1,60 @@
+.paginator {
+    margin: 10px 220px 10px 30px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.pageNumber {
+    padding: 3px;
+    border: 1px solid grey;
+    border-radius: 20%;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 10px;
+    width: 27px;
+    height: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.pageNumber:hover {
+    background: #f2f2f2;
+}
+
+.pageNumber.selectedPage {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.portionNumberLeft {
+    text-decoration: none;
+    outline: none;
+    border: none;
+    background-color: #fff;
+    font-size: 35px;
+    margin-left: 10px;
+    color: #4a76a8 ;
+    cursor: pointer;
+    transform: scaleX(-1);
+
+}
+
+.portionNumberLeft:hover {
+    color: #3439c3;
+}
+
+.portionNumberRight {
+    text-decoration: none;
+    outline: none;
+    border: none;
+    background-color: #fff;
+    font-size: 35px;
+    margin-right: 10px;
+    color: #4a76a8 ;
+    cursor: pointer;
+}
+
+.portionNumberRight:hover {
+    color: #3439c3;
+}

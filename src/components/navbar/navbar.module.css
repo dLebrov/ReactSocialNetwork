@@ -1,0 +1,30 @@
+.nav {
+    grid-area: n;
+    padding-top: 20px;
+    padding-left: 35px;
+    }
+.item a {
+   color: #4284f3;
+   margin-left: 20px;
+   font-size: 27px;
+   text-decoration: none;
+    font-weight: 600;
+}
+
+.item a.active {
+    color: #104acd;
+    font-size: 25px;
+}
+
+.item a:hover {
+    color: rgb(136, 134, 134);
+}
+
+.img {
+    width: 20px;
+}
+
+.setting {
+    padding-top: 40px;
+    width: 15px;
+}

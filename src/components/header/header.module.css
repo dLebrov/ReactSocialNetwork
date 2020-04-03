@@ -1,0 +1,27 @@
+.header {
+    grid-area: h;
+    background-color: #4a76a8;
+    border-radius: 0 0 20px 20px;
+}
+.header img {
+    margin: 9px 0 7px 55px;
+    width: 45px;
+}
+
+.loginBlock {
+    float: right;
+    font-size: 20px;
+    margin-right:  20px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.nav {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.nav:hover {
+    color: #bfb9bf;
+}

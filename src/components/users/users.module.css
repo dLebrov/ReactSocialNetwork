@@ -1,0 +1,90 @@
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 0 230px;
+    width: 500px;
+    height: 300px;
+    border-radius: 5%;
+    border: 1px solid #ececec;
+
+}
+
+.photo {
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+}
+
+
+
+.data {
+    font-size: 23px;
+    width: 200px;
+    word-break: break-all;
+    align-items: center;
+    margin-left: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.test {
+    flex-direction: row;
+    justify-content: center;
+}
+
+.followButton {
+    margin-top: 5px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #4a76a8;
+    margin-left: 74px;
+    background: transparent;
+    border: 2px solid #4a76a8;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    outline: none;
+    cursor: pointer;
+
+}
+
+.followButton:hover {
+    color: #fff;
+    background-color: #4a76a8;
+}
+
+.unFollowButton {
+    text-decoration: none;
+    color: #938d93;
+    background-color: #fff;
+    border: 2px solid #938d93;
+    border-radius: 6%;
+    font-weight: 600;
+    margin-left: 48px;
+    height: 50px;
+    font-size: 17px;
+    width: 100px;
+    margin-top: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.unFollowButton:hover {
+    background-color: #938d93;
+    color: #fff;
+    border: 2px solid #938d93;
+}
+
+
+
+
+
+
+
+
+
+
+
+
