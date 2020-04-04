@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "597c964d0a1be73409f2f87d793a00d3",
+    "revision": "b3e425b723573fdb4960ff28f94e11f3",
     "url": "/ReactSocialNetwork/index.html"
   },
   {
@@ -8,20 +8,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ReactSocialNetwork/static/css/4.3ee2560b.chunk.css"
   },
   {
-    "revision": "7e02e8e0d80abff5f2bb",
+    "revision": "f91940b54ddbdc1c724c",
     "url": "/ReactSocialNetwork/static/css/5.5def232d.chunk.css"
   },
   {
-    "revision": "2dd9c428842f5b4c99c3",
+    "revision": "ae72903bb348230495a2",
     "url": "/ReactSocialNetwork/static/css/main.0fee12a1.chunk.css"
   },
   {
-    "revision": "7bc1b0a720ad72756302",
-    "url": "/ReactSocialNetwork/static/js/2.2349c397.chunk.js"
+    "revision": "b12fe0555399025fbd05",
+    "url": "/ReactSocialNetwork/static/js/2.72352445.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/ReactSocialNetwork/static/js/2.2349c397.chunk.js.LICENSE.txt"
+    "url": "/ReactSocialNetwork/static/js/2.72352445.chunk.js.LICENSE.txt"
   },
   {
     "revision": "fc879a234d0b4aa48ef8",
@@ -36,16 +36,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ReactSocialNetwork/static/js/4.701770e6.chunk.js"
   },
   {
-    "revision": "7e02e8e0d80abff5f2bb",
-    "url": "/ReactSocialNetwork/static/js/5.bad40fd2.chunk.js"
+    "revision": "f91940b54ddbdc1c724c",
+    "url": "/ReactSocialNetwork/static/js/5.8f4b371f.chunk.js"
   },
   {
-    "revision": "2dd9c428842f5b4c99c3",
-    "url": "/ReactSocialNetwork/static/js/main.49ef7b90.chunk.js"
+    "revision": "ae72903bb348230495a2",
+    "url": "/ReactSocialNetwork/static/js/main.48fedd97.chunk.js"
   },
   {
-    "revision": "52db7b81f1ed6040ce0a",
-    "url": "/ReactSocialNetwork/static/js/runtime-main.fa5ecb52.js"
+    "revision": "0887263dab2f47c16e21",
+    "url": "/ReactSocialNetwork/static/js/runtime-main.ddfb1896.js"
   },
   {
     "revision": "4438da6dd0bc5021bdf2b7127d5f7058",
