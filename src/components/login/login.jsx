@@ -8,32 +8,45 @@ import {Redirect} from "react-router-dom";
 import s from '../common/FromsControls/FormsControls.module.css';
 
 const LoginForm = ({handleSubmit, error}) => {
-    return <form onSubmit={handleSubmit}>
-        <div>
-            <Field placeholder={"email"}
-                   name={"email"}
-                   component={Input}
-                   validate={[required]}/>
-        </div>
-        <div>
-            <Field placeholder={"Password"}
-                   name={"password"}
-                   type={"password"}
-                   component={Input}
-                   validate={[required]}/>
-        </div>
-        <div>
-            <Field component={Input} name={"rememberMe"} type={"checkbox"}/> Remember me
-        </div>
-        {error && <div className={s.formSummaryError}>
-            {error}
-        </div>}
-        <div>
-            <button>
-                Login
-            </button>
-        </div>
-    </form>
+    return (
+        <form className={s.formControl} onSubmit={handleSubmit}>
+            <ul className={s.form}>
+                <li>
+                    <h1>ВХОД</h1>
+                </li>
+                <li>
+                    <Field className={s.input} placeholder={"Email"}
+                           name={"email"}
+                           component={Input}
+                           validate={[required]}/>
+                </li>
+                <li>
+                    <Field className={s.input} placeholder={"Пароль"}
+                           name={"password"}
+                           type={"password"}
+                           component={Input}
+                           validate={[required]}/>
+                </li>
+                <li className={s.rememberMe}>
+                    <Field component={Input} name={"rememberMe"} type={"checkbox"}/>
+                    <div className={s.word}>
+                        Remember me
+                    </div>
+                </li>
+                {error && <div className={s.formSummaryError}>
+                    {error}
+                </div>}
+                <li>
+                    <button className={s.button}>Войти</button>
+                </li>
+            </ul>
+            <div className={s.data}>
+            <h1>Тестовый аккаунт: free@samuraijs.com</h1>
+            <h1>Пароль: free</h1>
+            </div>
+        </form>
+        
+    )
 }
 
 const LoginReduxForm = reduxForm({form: 'login'})(LoginForm)
@@ -48,7 +61,6 @@ const Login = (props) => {
     }
     return (
         <div>
-            <h1>LOGIN</h1>
             <LoginReduxForm onSubmit={onSubmit}/>
         </div>
     )

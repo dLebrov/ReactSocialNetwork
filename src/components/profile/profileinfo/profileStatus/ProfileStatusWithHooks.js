@@ -45,14 +45,14 @@ const ProfileStatusWithHooks = (props) => {
 
             { !editMode &&
             <div>
-                <span onClick={activateEditMode} >{"Статус: " + props.status}</span>
+                <span className={s.span} onClick={activateEditMode} >{"Статус: " + props.status}</span>
             </div>
             }
             {editMode &&
             <div>
                 Статус:
-                <input onChange={onStatusChange} autoFocus={true} onKeyPress={deactivateEditModeEnter} value={status}/>
-                <button onClick={deactivateEditMode} >Сохранить</button>
+                <input className={s.input} onChange={onStatusChange} autoFocus={true} onKeyPress={deactivateEditModeEnter} value={status}/>
+                <button className={s.button} onClick={deactivateEditMode} >Сохранить</button>
             </div>
             }
         </div>

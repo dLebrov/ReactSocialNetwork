@@ -1,10 +1,54 @@
 .formControl {
+}
 
+.form {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    align-items: center;
+    margin-right: 300px;
+}
+.input {
+    height: 62px;
+    width: 250px;
+    margin-bottom: 10px;
+    font-family: Ubuntu-Bold;
+    color: #403866;
+    background: #e6e6e6;
+    font-size: 18px;
+    padding: 0 20px 0 38px;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+}
+
+.rememberMe{
+    display: flex;
+    flex-direction: row;
+    padding: 0 0 10px 0;
+    font-family: Ubuntu-Regular;
+    margin-right: 188px;
+}
+
+.word {
+    margin-left: 10px;
+}
+
+.button {
+    margin-top: 20px;
+    height: 62px;
+    width: 310px;
+    font-size: 18px;
+    background-color: #827ffe;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
 }
 
 .formControl.error input,
 .formControl.error textarea {
-    border: 1px solid red;
+    border: 2px solid red;
+    border-radius: 3px;
 }
 
 .formControl.error span {
@@ -14,4 +58,10 @@
 .formSummaryError {
     padding: 5px;
     color: red;
+}
+
+.data {
+    margin-top: 100px;
+    text-align: center;
+    margin-right: 270px;
 }

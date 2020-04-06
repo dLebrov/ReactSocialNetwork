@@ -4,18 +4,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {BrowserRouter} from "react-router-dom";
+import {HashRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 import Favicon from "react-favicon";
 import logo from "../src/components/img/logo2.png"
 
     ReactDOM.render(
-        <BrowserRouter>
+        <HashRouter>
             < Favicon url = {logo} />
             <Provider store = {store}>
             <App  />
             </Provider>
-        </BrowserRouter>, document.getElementById('root'));
+        </HashRouter>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
