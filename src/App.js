@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/navbar/navbar';
-import {Route, withRouter} from "react-router-dom";
+import {Redirect, Route, withRouter} from "react-router-dom";
 import Settings from "./components/Settings/Settings";
 import Music from "./components/Music/Music";
 import News from "./components/News/News";
@@ -32,6 +32,7 @@ class App extends React.Component {
                 <HeaderContainer/>
                 <Navbar/>
                 <div className='app-wrapper-content'>
+                    <Route exact path='/' render={() => <Redirect to={"/profile"}/> } />
                     <Route path='/profile/:userId?' render={() =>{
                         return <React.Suspense fallback={<Preloader/>}>
                             <ProfileContainer/>
@@ -57,6 +58,7 @@ class App extends React.Component {
                     }}/>
 
                     <Route path='/login' render={() => <Login/>}/>
+                    {/*<Route path='*' render={() => <div>404 NOT FOUND</div>}/>*/}
                 </div>
             </div>
         );
