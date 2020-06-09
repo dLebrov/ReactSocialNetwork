@@ -4,7 +4,7 @@ import {savePhotoSuccess} from "../redux/profile-reducer";
 const instance = axios.create({
     withCredentials: true,
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
-    headers: {"API-KEY": "9844b466-56b7-4a78-a371-51d8fdf2f09e"}
+    headers: {"API-KEY": "a4c5407e-c446-46f9-831c-563295f47846"}
 });
 
 export const usersAPI = {
