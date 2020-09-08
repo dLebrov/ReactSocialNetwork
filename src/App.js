@@ -18,6 +18,7 @@ import Preloader from "./components/common/preloader/preloader";
 const  DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
 const  ProfileContainer = React.lazy(() => import('./components/profile/ProfileContainer'));
 
+
 class App extends React.Component {
     componentDidMount() {
         this.props.initializeApp();
@@ -66,7 +67,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    initialized: state.app.initialized
+    initialized: state.app.initialized,
 })
 
 export default compose(

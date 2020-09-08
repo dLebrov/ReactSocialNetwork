@@ -1,28 +1,24 @@
+import { dialogsAPI } from "../api/api";
+
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
 const SEND_MESSAGE = 'SEND_MESSAGE';
+const SET_DIALOGS = 'SET_DIALOGS';
 
 let initialState = {
-    dialogs: [
-        {id: 1, name: 'Влад'},
-        {id: 2, name: 'Кирилл'},
-        {id: 3, name: 'Вадим'},
-        {id: 4, name: 'Даша'},
-        {id: 5, name: 'Коля'}
-    ],
-
-    messages: [
-        {id: 1, message: "Привет"},
-        {id: 2, message: "Как дела ?"},
-        {id: 3, message: "Сегодня хороший день !"},
-        {id: 4, message: "Ура! пятница)"},
-        {id: 5, message: "Доброе утро"}
-    ]
+    dialogs: [],
+    messages: []
 };
 const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_NEW_MESSAGE_BODY:
             return {
                 ...state,
+            };
+        case SET_DIALOGS:
+            return {
+                ...state,
+                ...state.dialogs,
+                dialogs: action.dialogs
             };
         case SEND_MESSAGE:
             let body = action.newMessageBody;
@@ -37,6 +33,12 @@ const dialogsReducer = (state = initialState, action) => {
     }
 }
 
-export const SendMessageCreator = (newMessageBody) => ({type: SEND_MESSAGE, newMessageBody})
+export const setAllDialogs = (dialogs) =>({type: SET_DIALOGS, dialogs});
+export const SendMessageCreator = (newMessageBody) => ({type: SEND_MESSAGE, newMessageBody});
+
+export const getAllDialogs = () => async (dispatch) => {
+    let response = await dialogsAPI.getDialogs();
+    dispatch(setAllDialogs(response.data));
+};
 
 export default dialogsReducer;

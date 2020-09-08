@@ -7,6 +7,7 @@ import authReducer from "./auth-reducer";
 import thunkMidleware from 'redux-thunk';
 import {reducer as formReducer } from "redux-form";
 import appReducer from "./app-reducer";
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 let reducers = combineReducers({
     profilePage: profileReducer,
@@ -18,6 +19,9 @@ let reducers = combineReducers({
     app: appReducer
 });
 
-let store = createStore(reducers, applyMiddleware(thunkMidleware));
+
+let store = createStore(reducers, composeWithDevTools(applyMiddleware(thunkMidleware)));
+
+window.store = store;
 
 export default store;

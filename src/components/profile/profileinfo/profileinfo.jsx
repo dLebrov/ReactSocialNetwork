@@ -28,12 +28,8 @@ const ProfileInfo = (props) => {
     if (!props.profile) {
         return <Preloader/>
     }
-    //<img   src="https://wallbox.ru/resize/1024x1024/wallpapers/main/201333/devushka-krylya-sinij-52f2c8e.jpg" /> - профиль
     return (
         <div>
-            {/*<div>
-                <img className={s.img} src={background} />
-            </div>*/}
             <div className={s.all}>
                 <div>
                     <div className={s.description}>

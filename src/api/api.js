@@ -1,5 +1,4 @@
 import * as axios from "axios";
-import {savePhotoSuccess} from "../redux/profile-reducer";
 
 const instance = axios.create({
     withCredentials: true,
@@ -8,7 +7,7 @@ const instance = axios.create({
 });
 
 export const usersAPI = {
-    getUsers(currentPage = 1, pageSize = 10) {
+    getUsers (currentPage = 1, pageSize = 10) {
         return instance.get(`users?Page=${currentPage}&count=${pageSize}`)
             .then(response => response.data)
     },
@@ -54,4 +53,8 @@ export const authAPI = {
 
 export const securityAPI = {
     getCaptchaUrl () { return instance.get(`security/get-captcha-url`)},
+}
+
+export const dialogsAPI = {
+    getDialogs () {return instance.get(`dialogs`)}
 }
