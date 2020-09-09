@@ -4,25 +4,30 @@ import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 import {withAuthRedirect} from "../hoc/withAuthRedirect";
 import {compose} from "redux";
-import { getAllDialogs } from './../../redux/dialogs-reducer';
+import { getAllDialogs, getAllMessages, getFriendId } from '../../redux/dialogs-reducer';
 
 
 const DialogsContainer = (props) => {
     useEffect( () => {
         props.setDialogs()} , []);
     return (
-        <Dialogs allDialogs={props.allDialogs} sendMessage={props.sendMessage} />
+        <Dialogs getFriendId={props.getFriendId} allDialogs={props.allDialogs} allMessages={props.allMessages} sendMessage={props.sendMessage} />
     )
 }
 
 let mapStateToProps = (state) => {
     return {
         allDialogs: state.dialogsPage.dialogs,
+        allMessages: state.dialogsPage.messages
 
     }
 }
 
 export default compose(connect(mapStateToProps, 
-    {sendMessage:SendMessageCreator,setDialogs:getAllDialogs}),
+    {sendMessage:SendMessageCreator,
+        setDialogs:getAllDialogs,
+        getAllMessages,
+        getFriendId
+    }),
     withAuthRedirect
 )(DialogsContainer);

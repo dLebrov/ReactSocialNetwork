@@ -8,8 +8,8 @@ import { Input } from '../common/FromsControls/FormsControls';
 
 
 const Dialogs = (props) => {
-    let dialogsElements = props.allDialogs.map(d => (<DialogItem name={d.userName} key={d.id} id={d.id} photos={d.photos.small}/>));
-    //let messagesElements = state.messages.map(m => (<Message message={m.message} key={m.id} id={m.id}/>));
+    let dialogsElements = props.allDialogs.map(d => (<DialogItem getFriendId={props.getFriendId} name={d.userName} key={d.id} id={d.id} photos={d.photos.small}/>));
+    let messagesElements = props.allMessages.map(m => (<Message message={m.body} key={m.id} id={m.id} viewed={m.viewed}/>));
     let addNewMessage = (values) => {
         props.sendMessage(values.newMessageBody);
     }
@@ -19,9 +19,9 @@ const Dialogs = (props) => {
                 <div className={s.dialogsItems}>
                         {dialogsElements}
                 </div>
-                {/* <div className={s.messages}>
+                {/* { <div className={s.messages}>
                         {messagesElements}
-                </div> */}
+                </div> } */}
             </div>
             <div className={s.addMessage}>
             </div>

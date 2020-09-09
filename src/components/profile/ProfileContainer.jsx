@@ -38,6 +38,7 @@ class ProfileContainer extends React.Component {
                      status = {this.props.status}
                      updateStatus ={this.props.updateStatus}
                      savePhoto = {this.props.savePhoto}
+                     
             />
         )
     }
@@ -54,6 +55,3 @@ export default compose(
     connect(mapStateToProps, {getUserProfile, getStatus, updateStatus, savePhoto, saveProfile}),
     withRouter, withAuthRedirect
 ) (ProfileContainer)
-
-
-
