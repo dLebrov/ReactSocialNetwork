@@ -58,9 +58,9 @@ export const securityAPI = {
 export const dialogsAPI = {
     getDialogs () {return instance.get(`dialogs`)},
 
-    getAllMessages (friendId) {return instance.get(`dialogs/${friendId}/messages`)},
+    getAllMessages (id) {return instance.get(`dialogs/${id}/messages`)},
 
-    startChatting (friendId) {return instance.put(`dialogs/${friendId}`)}
+    startChatting (id) {return instance.put(`dialogs/${id}`)}
 }
 
 

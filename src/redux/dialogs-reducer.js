@@ -4,12 +4,11 @@ const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
 const SEND_MESSAGE = 'SEND_MESSAGE';
 const SET_DIALOGS = 'SET_DIALOGS';
 const SET_ALL_MESSAGES = 'SET_ALL_MESSAGES';
-const GET_FRIEND_ID ='GET_FRIEND_ID';
+const BEGINING_CHATTING = 'BEGINING_CHATTING';
 
 let initialState = {
     dialogs: [],
-    messages: [],
-    idFriend: null
+    messages: []
 };
 const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -22,22 +21,13 @@ const dialogsReducer = (state = initialState, action) => {
                 ...state,
                 ...state.dialogs,
                 dialogs: action.dialogs,
-                idFriend: action.dialogs.map(id => { return id.id})
             };
         case SET_ALL_MESSAGES:
             return {
                 ...state,
                 ...state.messages,
-                messages: action.allessages
+                messages: action.allMessages
             };
-        // эксперементировал
-        case GET_FRIEND_ID: 
-            return {
-                ...state,
-                ...state.idFriend,
-                idFriend: state.dialogs.map((m) => (m.id === action.id) ? {idFriend: action.id}: null)
-            };
-        //
         case SEND_MESSAGE:
             let body = action.newMessageBody;
             return {
@@ -53,19 +43,21 @@ const dialogsReducer = (state = initialState, action) => {
 
 export const setAllDialogs = (dialogs) =>({type: SET_DIALOGS, dialogs});
 export const SendMessageCreator = (newMessageBody) => ({type: SEND_MESSAGE, newMessageBody});
-export const SetAllMessages = (allMessages) =>({type: SET_ALL_MESSAGES, allMessages})
-export const getFriendId = (id) => ({type: GET_FRIEND_ID, id})
+export const SetAllMessages = (allMessages) =>({type: SET_ALL_MESSAGES, allMessages});
+export const beginingChattingAC = (data) =>({type: BEGINING_CHATTING, data});
 
 export const getAllDialogs = () => async (dispatch) => {
     let response = await dialogsAPI.getDialogs();
     dispatch(setAllDialogs(response.data));
 };
 
-export const getAllMessages = () => async (dispatch, getState) => {
-    let friendId = getState().dialogsPage.idFriend;
-    let response = await dialogsAPI.getAllMessages(friendId);
+export const getAllMessages = (id) => async (dispatch, getState) => {
+    let response = await dialogsAPI.getAllMessages(id);
     dispatch(SetAllMessages(response.data.items));
-    
+}
+
+export const beginingChatting = (id) => async (dispatch) => {
+    await dialogsAPI.startChatting(id);
 }
 
 export default dialogsReducer;

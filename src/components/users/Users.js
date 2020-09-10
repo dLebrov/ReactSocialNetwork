@@ -9,6 +9,7 @@ const Users = (props) => {
     if (!props.users) {
         return <Preloader />
     }
+
     return (
     <div>
         <Paginator pageSize={props.pageSize}
@@ -30,7 +31,12 @@ const Users = (props) => {
                                       onClick={() => { props.unFollow(u.id) }}> Удалить </button>
                             : <button disabled={props.followingInProgress.some( id => id === u.id)} className={style.followButton}
                                       onClick={() => {props.follow(u.id)}}> + </button>}
-
+                        
+                            <button>
+                                <NavLink to={'/dialogs/'+ u.id}>
+                                    написать
+                                </NavLink>
+                            </button>
                     </div>
                 </span>
                 <div className={style.data}>

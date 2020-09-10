@@ -12,11 +12,16 @@ import {connect} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/preloader/preloader";
+import ChatContainer from './components/Dialogs/chat/ChatContainer.jsx';
 
 //import ProfileContainer from "./components/profile/ProfileContainer";
 //import DialogsContainer from "./components/Dialogs/DialogsContainer";
 const  DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
 const  ProfileContainer = React.lazy(() => import('./components/profile/ProfileContainer'));
+
+
+
+
 
 
 class App extends React.Component {
@@ -40,17 +45,17 @@ class App extends React.Component {
                         </React.Suspense>
                     }}/>
 
-                    <Route path='/dialogs' render={() => {
+                    <Route exact path='/dialogs' render={() => {
                         return <React.Suspense fallback={<Preloader/>}>
                         <DialogsContainer/>
                         </React.Suspense>
                     }}/>
 
+                    <Route exact path={'/dialogs/:id'} render={() => { return <ChatContainer /> }} />
+
                     <Route path='/News' render={() => { return <News /> }}/>
 
                     <Route path='/Music' render={() =>{ return <Music />} }/>
-
-                    <Route path={'/dialogs'} render={() => { return <News /> }} />
 
                     <Route path='/Settings' render={() => { return <Settings />}}/>
 

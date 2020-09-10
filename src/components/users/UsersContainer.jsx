@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
+import { withRouter} from 'react-router-dom';
 import {
     follow,
     setCurrentPage,
@@ -7,13 +8,7 @@ import {
 } from "../../redux/users-reducer";
 import Users from "./Users";
 import {compose} from "redux";
-import {
-    getCurrentPage,
-    getFollowingInProgress,
-    getIsFetching,
-    getPageSize,
-    getTotalUserCount, getUsers
-} from "../../redux/UsersSelectors";
+import {getCurrentPage,getFollowingInProgress,getIsFetching,getPageSize,getTotalUserCount, getUsers} from "../../redux/UsersSelectors";
 
 class UsersContainer extends React.Component {
 
@@ -38,6 +33,8 @@ class UsersContainer extends React.Component {
                    follow={this.props.follow}
                    onPageChanged={this.onPageChanged}
                    followingInProgress={this.props.followingInProgress}
+                   id = {this.props.match.params.id}
+                   
             />
         </>
     }
@@ -59,4 +56,8 @@ export default compose (connect(mapStateToProps, {
     unFollow,
     setCurrentPage,
     toggleIsFollowingProgress,
-    getUsers: requestUsers})) (UsersContainer)
+    getUsers: requestUsers,
+}
+    ),
+    withRouter
+    ) (UsersContainer)
