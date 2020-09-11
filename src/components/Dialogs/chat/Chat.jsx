@@ -5,21 +5,22 @@ import {maxLengthCreator, required} from "../../../utils/validators/validators";
 import { Input } from '../../common/FromsControls/FormsControls';
 import Message from './../Message/Message';
 import ChatItems from './chatItems/ChatItems';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 
 const Dialogs = (props) => {
-let dialogsElements = props.allDialogs.map(d => {   
-    return (props.id == d.id && d.id !== null) ? 
-    <ChatItems name={d.userName} key={d.id} id={d.id} photos={d.photos.small} />: null
-});
     let messagesElements = props.allMessages.map(m => <Message message={m.body} senderName={m.senderName} />)
     let addNewMessage = (values) => {
-        props.sendMessage(values.newMessageBody);
+        props.sendMessageThunk(props.id, values.newMessageBody);
     }
     return (<div>
             <div className={s.dialogs}>
                 <div className={s.dialogsItems}>
-                        {dialogsElements}
+                {props.userData ?
+                    <ChatItems name={props.userData.fullName}
+                    key={props.userData.userId} id={props.userData.userId}
+                    photos={props.userData.photos.small} /> : false}
                 </div>
             </div>
             <div>

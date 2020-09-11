@@ -8,7 +8,8 @@ const BEGINING_CHATTING = 'BEGINING_CHATTING';
 
 let initialState = {
     dialogs: [],
-    messages: []
+    messages: [],
+    messageForFriend: null
 };
 const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -51,13 +52,18 @@ export const getAllDialogs = () => async (dispatch) => {
     dispatch(setAllDialogs(response.data));
 };
 
-export const getAllMessages = (id) => async (dispatch, getState) => {
+export const getAllMessages = (id) => async (dispatch) => {
     let response = await dialogsAPI.getAllMessages(id);
     dispatch(SetAllMessages(response.data.items));
 }
 
 export const beginingChatting = (id) => async (dispatch) => {
     await dialogsAPI.startChatting(id);
+}
+
+export const sendMessageThunk = (id, message) => async (dispatch) => {
+    await dialogsAPI.sendMessage(id, message);
+    dispatch(getAllMessages(id));
 }
 
 export default dialogsReducer;

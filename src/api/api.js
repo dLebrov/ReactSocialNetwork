@@ -60,7 +60,9 @@ export const dialogsAPI = {
 
     getAllMessages (id) {return instance.get(`dialogs/${id}/messages`)},
 
-    startChatting (id) {return instance.put(`dialogs/${id}`)}
+    startChatting (id) {return instance.put(`dialogs/${id}`)},
+
+    sendMessage (id, message) {return instance.post(`dialogs/${id}/messages`, {body: message})}
 }
 
 
