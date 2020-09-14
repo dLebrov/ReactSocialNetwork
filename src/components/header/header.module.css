@@ -1,17 +1,19 @@
 .header {
     grid-area: h;
-    background-color: #4a76a8;
-    border-radius: 0 0 10px 10px;
+    background-color:#1a1a1a;
 }
 .header img {
-    margin: 9px 0 7px 55px;
     width: 45px;
+}
+
+.logo {
+    margin: 9px 0 7px 110px;
 }
 
 .loginBlock {
     float: right;
     font-size: 20px;
-    margin-right:  20px;
+    margin-right:  40px;
     margin-top: 13px;
     color: #fff;
 }
@@ -27,13 +29,25 @@
 }
 
 .button {
-    appearance: none;
-    border: 1px solid #4C4C4C;
+    display: flex;
+    width: 120px;
+    height: 40px;
+    text-align: center;
     border-radius: 5px;
-    background: #69717d;
     color: #fff;
-    padding: 8px 16px;
+    padding-right: 8px;
     font-size: 16px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button span {
+    padding-bottom: 7px;
+}
+
+.button img {
+    width: 30px;
+    height: 30px;
 }
 
 .button:hover {
@@ -52,7 +66,7 @@
 
 .name {
     margin-top: 3px;
-    margin-right: 18px;
+    margin-right: 20px;
     font-size: 24px;
     font-family: Сomic Sans MS;
 }

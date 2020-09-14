@@ -15,7 +15,7 @@ const ChatContainer = (props) => {
     useEffect (()=> {
         props.getUserProfile(history.id)}, [history.id]);
     useEffect (()=> {
-        props.getAllMessages(history.id)}, [history.id]);
+        props.getAllMessages(history.id)}, [history.id,props.allMessages]);
         
     return (
         <Chat allDialogs={props.allDialogs} id={history.id} allMessages={props.allMessages} sendMessageThunk={props.sendMessageThunk} userData={props.userData} />

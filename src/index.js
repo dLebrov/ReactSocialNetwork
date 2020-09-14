@@ -7,11 +7,10 @@ import App from './App';
 import {HashRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 import Favicon from "react-favicon";
-import logo from "../src/components/img/logo2.png"
-
+import myLogo from "../src/components/img/myLogo.png";
     ReactDOM.render(
         <HashRouter>
-            < Favicon url = {logo} />
+            < Favicon url = {myLogo} />
             <Provider store = {store}>
             <App  />
             </Provider>
