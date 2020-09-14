@@ -1,24 +1,31 @@
 .logo {
-  margin-top: 10px;
+  margin-top: 13px;
   height: 200px;
   width: 200px;
   border-radius: 100%;
   position: center;
   opacity: 1.0;
+  border: 5px solid #18191a;
 }
 
 .logo:hover {
   cursor: pointer;
+  opacity: 0.8;
 }
 
 .all {
+  background-color: #242526;
   margin-left: 30px;
+  padding-top: 20px;
+  border-radius: 5px;
+  width: 80%;
 }
 
 .description {
-  padding-bottom: 15px;
+  padding-bottom: 20px;
   margin-left: 35px;
   display: flex;
+  color: #fff;
 }
 
 .input {
@@ -26,7 +33,7 @@
 }
 
 .des {
-  margin-top: 25px;
+  margin-top: 20px;
   margin-left: 60px;
   font-family: "Book Antiqua";
   font-size: 18px;
@@ -34,5 +41,9 @@
 
 .des li {
   list-style-type: none;
-  margin: 7px 0 7px 0;
+  margin: 12px 0 12px 0;
+}
+
+.contacts {
+  margin: 12px 0 12px 0;
 }

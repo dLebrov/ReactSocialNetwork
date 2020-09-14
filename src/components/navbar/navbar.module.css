@@ -3,22 +3,24 @@
     padding-top: 20px;
     padding-left: 35px;
     width: 90%;
-    }
+}
+
+.itemHover:hover {
+    background-color: #4c4c4c;
+    border-radius: 3px;
+}
+
 .item a {
-   color: #4284f3;
+   color: #fff;
    margin-left: 20px;
    font-size: 27px;
    text-decoration: none;
-    font-weight: 600;
+   font-weight: 600;
+   transition: .3 linear;
 }
 
 .item a.active {
-    color: #104acd;
     font-size: 25px;
-}
-
-.item a:hover {
-    color: rgb(136, 134, 134);
 }
 
 .img {

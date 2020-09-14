@@ -12,23 +12,23 @@ const navbar = () => {
     return (
         <nav className={s.nav}>
             <div className={s.item}>
-                <div>
-                    <NavLink to ="/profile" activeClassName={s.active}> <img className={s.img} src={profile} /> Профиль </NavLink>
+                <div className= {s.itemHover}>
+                    <NavLink to ="/profile" activeClassName={s.active}> {/*<img className={s.img} src={profile} /> */} Профиль </NavLink>
                 </div>
-                <div>
-                    <NavLink to ="News" activeClassName={s.active}><img className={s.img} src={news} /> Новости </NavLink>
+                <div className= {s.itemHover}>
+                    <NavLink to ="News" activeClassName={s.active}> {/*<img className={s.img} src={news} />*/} Новости </NavLink>
+                </div >
+                <div className= {s.itemHover}>
+                    <NavLink to="/Dialogs" activeClassName={s.active}>{/*<img className={s.img} src={message} />*/} Сообщения </NavLink>
                 </div>
-                <div>
-                    <NavLink to="/Dialogs" activeClassName={s.active}><img className={s.img} src={message} /> Сообщения </NavLink>
+                <div className= {s.itemHover}>
+                    <NavLink to="Music" activeClassName={s.active}>{/*<img className={s.img} src={music} /> */}Музыка </NavLink>
                 </div>
-                <div>
-                    <NavLink to="Music" activeClassName={s.active}><img className={s.img} src={music} /> Музыка </NavLink>
+                <div className= {s.itemHover}>
+                    <NavLink to ="/users" activeClassName={s.active}>{/*<img className={s.img} src={usersSearch} /> */}Люди </NavLink>
                 </div>
-                <div>
-                    <NavLink to ="/users" activeClassName={s.active}><img className={s.img} src={usersSearch} /> Люди </NavLink>
-                </div>
-                <div>
-                    <NavLink to ="Settings" activeClassName={s.active}><img className={s.setting} src={setting} /> Настройки </NavLink>
+                <div className= {s.itemHover}>
+                    <NavLink to ="Settings" activeClassName={s.active}>{/*<img className={s.setting} src={setting} />*/} Настройки </NavLink>
                 </div>
             </div>
         </nav>

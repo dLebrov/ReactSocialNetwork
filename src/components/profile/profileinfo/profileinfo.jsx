@@ -9,6 +9,7 @@ const ProfileInfo = (props) => {
     let [editMode, setEditMode] = useState(false);
 
     const onSubmit = (formData) => {
+        props.updateStatus(formData.status);
         props.saveProfile(formData).then (() => {
             setEditMode(false);
         })
@@ -28,6 +29,15 @@ const ProfileInfo = (props) => {
     if (!props.profile) {
         return <Preloader/>
     }
+
+    let allData = { aboutMe: props.profile.aboutMe, 
+                    status: props.status,
+                    contacts: props.profile.contacts,
+                    fullName: props.profile.fullName,
+                    lookingForAJob: props.profile.lookingForAJob,
+                    lookingForAJobDescription: props.profile.lookingForAJobDescription,
+                    userId: props.profile.userId
+                };
     return (
         <div>
             <div className={s.all}>
@@ -37,7 +47,7 @@ const ProfileInfo = (props) => {
                              src={props.profile.photos.large == null ? user : props.profile.photos.large}/>
                         <input className={s.input} type="file" id="file" onChange={onMainPhotoSelected}/>
 
-                        {editMode ? <ProfileDataForm initialValues={props.profile} profile={props.profile}
+                        {editMode ? <ProfileDataForm initialValues={allData} profile={props.profile}
                                                      onSubmit = {onSubmit}/>
                         : <ProfileData status={props.status}
                                           updateStatus={props.updateStatus}
@@ -56,7 +66,9 @@ const ProfileInfo = (props) => {
 const ProfileData = (props) => {
     return (
         <ul className={s.des}>
-            <li>{"Имя:  " + props.profile.fullName}</li>
+            <li>
+                {"Имя:  " + props.profile.fullName}
+            </li>
             <li>
                 <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
             </li>
@@ -80,7 +92,7 @@ const ProfileData = (props) => {
 };
 
 const Contact =(props) => {
-    return <div>{props.contactTitle}: {props.contactValue}</div>
+    return <div className={s.contacts}>{props.contactTitle}: {props.contactValue}</div>
 }
 
 export default ProfileInfo;

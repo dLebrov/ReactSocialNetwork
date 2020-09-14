@@ -47,7 +47,7 @@ const Profile = (props) => {
         savePhoto={props.savePhoto}
         saveProfile={props.saveProfile}
       />
-      <MyPostsContainer />
+      {/* <MyPostsContainer /> */}
     </div>
   );
 };
