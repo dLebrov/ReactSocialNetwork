@@ -1,7 +1,7 @@
 ## Briefly about what it is?
 This is my first social network that I develop on react. Using libraries: React and Redux (Thunk, Axios,redux-form).
 
-## Link to social network: https://sieugene.github.io/ReactLearning/
+## Link to social network: https://raydim.github.io/ReactSocialNetwork/
 API: https://social-network.samuraijs.com/
 At this point, the user can:
 
