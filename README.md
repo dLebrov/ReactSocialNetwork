@@ -1,5 +1,4 @@
-## The social network is currently at the last stage of development. 
-##  Layout and adaptation are underway, 
+## The social network is currently at the last stage of development. Layout and adaptation are underway, 
 ##  so for now it may not be displayed correctly !!!
 
 ## Briefly about what it is?
