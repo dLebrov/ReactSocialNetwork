@@ -1,3 +1,15 @@
+Briefly about what it is?
+This is my first social network that I develop on react. Using libraries: React and Redux (Thunk, Axios,redux-form).
+
+Link to social network: https://sieugene.github.io/ReactLearning/
+API: https://social-network.samuraijs.com/
+At this point, the user can:
+
+Log in(there is validation, captcha)
+To change the profile information
+Subscribe to other users
+Write messages to users
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
