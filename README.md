@@ -1,3 +1,7 @@
+## The social network is currently at the last stage of development. 
+## Layout and adaptation are underway, 
+## so for now it may not be displayed correctly !!!
+
 ## Briefly about what it is?
 This is my first social network that I develop on react. Using libraries: React and Redux (Thunk, Axios,redux-form).
 
