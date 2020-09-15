@@ -3,16 +3,27 @@ import s from "./../profileinfo/profileinfo.module.css";
 import {createField, Input} from "../../common/FromsControls/FormsControls";
 import {reduxForm} from "redux-form";
 import style from "../../common/FromsControls/FormsControls.module.css";
-import { setStatus } from './../../../redux/profile-reducer';
-import { Col, Container, Modal, Row } from "react-bootstrap";
+import {Button, Modal} from "react-bootstrap";
+import styled from "styled-components";
 
 const ProfileDataForm = (props) => {
     const handleClose = () => props.setShow(false);
+
+    const ModalStyled = styled.div`
+        background: #18191a;
+        color:#fff;
+        .close {
+            color:#fff;
+        }
+    `
     
     return (
-        <Modal show={props.show} onHide={handleClose} backdrop="static" keyboard={false}>
+        <Modal show={props.show} onHide={handleClose} size="lg" 
+        aria-labelledby="contained-modal-title-vcenter" centered 
+        backdrop="static" keyboard={false}>
+            <ModalStyled>
             <Modal.Header closeButton>  
-                <Modal.Title>Modal title</Modal.Title>
+                <Modal.Title id="contained-modal-title-vcenter">Информация</Modal.Title>
             </Modal.Header>
             <form onSubmit={props.handleSubmit}>
             <Modal.Body>
@@ -21,7 +32,7 @@ const ProfileDataForm = (props) => {
                 <div>
                     Статус: {createField ("Статус", "status", [], Input)}
                 </div>
-                <div>
+                <div className= {s.checkBox}>
                     Работа: {createField("", "lookingForAJob", [], Input, {type: "checkbox"})}
                 </div>
                 <div>
@@ -43,9 +54,10 @@ const ProfileDataForm = (props) => {
                 </div>
             </Modal.Body>
             <Modal.Footer>
-                <button>Сохранить</button>  
+                <button className={s.buttonModal}>Сохранить</button>  
             </Modal.Footer>
             </form>
+            </ModalStyled>
         </Modal>
         
     )

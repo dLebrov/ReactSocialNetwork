@@ -33,10 +33,9 @@
 }
 
 .des {
-  margin-top: 20px;
-  margin-left: 60px;
   font-family: "Book Antiqua";
   font-size: 18px;
+  margin: 20px 0 25px 60px;
 }
 
 .des li {
@@ -91,4 +90,33 @@
 
 .button:hover {
   background-color: #67696b;
+}
+
+.buttonModal {
+  outline: none;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  transform: none;
+  height: 40px;
+  width: 120px;
+  font-weight: 500;
+}
+
+.buttonModal:hover {
+  background-color: #0069d9;
+}
+
+.checkBox input {
+  width: 20px;
+  border: 0;
+  border-bottom: 0;
+  outline: 0;
+  font-size: 15px;
+  color: #fff;
+  padding: 7px 0;
+  background: none;
+  margin: 0 auto;
 }
