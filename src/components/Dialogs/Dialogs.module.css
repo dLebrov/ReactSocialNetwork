@@ -1,14 +1,18 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 7fr 1fr;
+    color: #fff;
+}
 
+h1 {
+    color: #fff;
 }
 
 .dialogsItems {
     padding: 25px ;
     margin-right: 20px;
     margin-bottom: 100px;
-
+    
 }
 
 
@@ -35,12 +39,13 @@
     padding-top: 26px;
     padding-left: 30px;
     margin-bottom: 100px;
-
+    
 
 }
 
 .text {
     padding: 0 0 53px 0;
+    color: #fff;
 
 }
 
@@ -54,7 +59,6 @@
 }
 
 .addMessage {
-    margin-left: 20px;
     margin-top: 100px;
 }
 
@@ -64,6 +68,7 @@
 
 .input {
     margin-right: 20px;
+    margin-bottom: 100px;
 }
 
 

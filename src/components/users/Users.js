@@ -12,6 +12,7 @@ const Users = (props) => {
 
     return (
     <div>
+        <h1>Layout Is Not Ready</h1>
         <Paginator pageSize={props.pageSize}
                    totalItemsCount={props.totalUserCount}
                    currentPage={props.currentPage}
