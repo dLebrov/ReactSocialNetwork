@@ -6,12 +6,15 @@ import ProfileStatusWithHooks from "./profileStatus/ProfileStatusWithHooks";
 import ProfileDataForm from "./ProfileDataForm";
 
 const ProfileInfo = (props) => {
-    let [editMode, setEditMode] = useState(false);
+    //let [editMode, setEditMode] = useState(false);
+
+    const [show, setShow] = useState(false);
+    const handleShow = () => setShow(true);
 
     const onSubmit = (formData) => {
         props.updateStatus(formData.status);
         props.saveProfile(formData).then (() => {
-            setEditMode(false);
+            setShow(false);
         })
 
     };
@@ -30,14 +33,16 @@ const ProfileInfo = (props) => {
         return <Preloader/>
     }
 
-    let allData = { aboutMe: props.profile.aboutMe, 
-                    status: props.status,
-                    contacts: props.profile.contacts,
-                    fullName: props.profile.fullName,
-                    lookingForAJob: props.profile.lookingForAJob,
-                    lookingForAJobDescription: props.profile.lookingForAJobDescription,
-                    userId: props.profile.userId
-                };
+    let allData = { 
+        aboutMe: props.profile.aboutMe, 
+        status: props.status,
+        contacts: props.profile.contacts,
+        fullName: props.profile.fullName,
+        lookingForAJob: props.profile.lookingForAJob,
+        lookingForAJobDescription: props.profile.lookingForAJobDescription,
+        userId: props.profile.userId
+    };
+
     return (
         <div>
             <div className={s.all}>
@@ -47,15 +52,13 @@ const ProfileInfo = (props) => {
                              src={props.profile.photos.large == null ? user : props.profile.photos.large}/>
                         <input className={s.input} type="file" id="file" onChange={onMainPhotoSelected}/>
 
-                        {editMode ? <ProfileDataForm initialValues={allData} profile={props.profile}
+                        {show ? <ProfileDataForm show={show} setShow={setShow} initialValues={allData} profile={props.profile}
                                                      onSubmit = {onSubmit}/>
                         : <ProfileData status={props.status}
                                           updateStatus={props.updateStatus}
                                           profile={props.profile}
                                           isOwner={props.isOwner}
-                                          goToEditMode={() => {
-                                              setEditMode(true)
-                                          }}/>}
+                                          handleShow={handleShow}/>}
                     </div>
                 </div>
             </div>
@@ -67,7 +70,7 @@ const ProfileData = (props) => {
     return (
         <ul className={s.des}>
             <li>
-                {"Имя:  " + props.profile.fullName}
+                { "Имя: " + props.profile.fullName}
             </li>
             <li>
                 <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
@@ -86,13 +89,13 @@ const ProfileData = (props) => {
                     return <Contact key={key} contactTitle={key} contactValue={props.profile.contacts[key]} />
                 }))}
             </li>
-            {props.isOwner && <button onClick={props.goToEditMode}>Изменить</button>}
+            {props.isOwner && <button className={s.button} onClick={props.handleShow}>Редактировать</button>}
         </ul>
     )
 };
 
 const Contact =(props) => {
-    return <div className={s.contacts}>{props.contactTitle}: {props.contactValue}</div>
+    return <div className={s.contacts}>{props.contactTitle}: <a href = {props.contactValue} target="blank">{props.contactValue}</a></div>
 }
 
 export default ProfileInfo;
