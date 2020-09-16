@@ -19,7 +19,7 @@
     width: 240px;
     outline: none;
     color: #fff;
-    border-radius: 24px;
+    border-radius: 12px;
     transition: 0.25s;
 }
 
@@ -28,6 +28,7 @@
     border-color: #2ecc71;
     background-color: #18191a;
     background: none;
+    outline: none;
   }
 
 .rememberMe{
@@ -45,18 +46,14 @@
 }
 
 .button {
-    border:0;
     width: 240px;
     background: none;
-    display: block;
     margin: 20px auto;
     text-align: center;
     border: 2px solid #2ecc71;
     padding: 14px 40px;
-    outline: none;
-    color: white;
-    border-radius: 24px;
-    transition: 0.25s;
+    color: #fff;
+    border-radius: 12px;
     cursor: pointer;
 }
 
@@ -64,11 +61,17 @@
     background: #2ecc71;
 }
 
+.button button:focus {
+    outline: none;
+    border: none;
+
+}
+
 .formControl.error input,
 .formControl.error textarea {
     border: 2px solid red;
     border-radius: 3px;
-    border-radius: 24px;
+    border-radius: 12px;
     width: 300px;
 }
 

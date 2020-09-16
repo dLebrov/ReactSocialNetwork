@@ -1,13 +1,11 @@
 import React from 'react';
 import s from "../../Dialogs.module.css";
 import user from '../../../img/user.png';
-//с onClick эксперементировал
 const ChatItems = (props) => {
-
     return (
-            <div className={s.dialog}>
+            <div className={s.chatDialog}>
                 <img src={!props.photos ? user: props.photos} alt=""/>
-                    {props.name} 
+                <div>{props.name}</div>
             </div>
     )
 }

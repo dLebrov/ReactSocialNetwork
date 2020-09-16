@@ -10,24 +10,24 @@ import s from '../common/FromsControls/FormsControls.module.css';
 const LoginForm = ({handleSubmit, error, captchaUrl}) => {
     return (
         <form onSubmit={handleSubmit}>
-            <ul className={s.form}>
-                <li>
+            <div className={s.form}>
+                <div>
                     <h1>ВХОД</h1>
-                </li>
-                <li className={s.login}>
+                </div>
+                <div className={s.login}>
                     <Field placeholder={"Email"}
                            name={"email"}
                            type={"text"}
                            component={Input}
                            validate={[required]}/>
-                </li>
-                <li className={s.password}>
+                </div>
+                <div className={s.password}>
                     <Field  placeholder={"Пароль"}
                            name={"password"}
                            type={"password"}
                            component={Input}
                            validate={[required]}/>
-                </li>
+                </div>
                 <div>
                     {captchaUrl && <img src={captchaUrl}/>}
                     {captchaUrl && createField("Введите символы", "captcha", [required], Input)}
@@ -35,10 +35,8 @@ const LoginForm = ({handleSubmit, error, captchaUrl}) => {
                 {error && <div className={s.formSummaryError}>
                     {error}
                 </div>}
-                <li>
                     <button className={s.button}>Войти</button>
-                </li>
-            </ul>
+            </div>
             <div className={s.data}>
             <h1>Тестовый аккаунт: free@samuraijs.com</h1>
             <h1>Пароль: free</h1>
