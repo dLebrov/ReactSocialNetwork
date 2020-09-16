@@ -23,8 +23,8 @@ const Header = (props) => {
                             <span type = "text/css">Выйти</span>
                         </div>
                     </div>
-                :<NavLink className={s.nav} to={'/login'}>
-                    <button className={s.button}>Авторизоваться</button>
+                :<NavLink to={'/login'}>
+                    <button className={s.logout}>Авторизоваться</button>
                 </NavLink>}
             </div>
 

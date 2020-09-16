@@ -27,10 +27,20 @@
     color: #fff;
 }
 
-.nav {
-    text-decoration: none;
+.logout {
+    font-size: 16px;
+    outline: none;
+    border: none;
     color: #fff;
+    background-color: #434344;
+    text-decoration: none;
     font-weight: bold;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+.logout:hover {
+    background-color:  #4e4e4e;
 }
 
 .nav:hover {
@@ -80,7 +90,7 @@
 }
 
 .name {
-    margin-top: 7px;
+    margin-top: 3px;
     margin-right: 20px;
     font-size: 24px;
     font-family: Сomic Sans MS;

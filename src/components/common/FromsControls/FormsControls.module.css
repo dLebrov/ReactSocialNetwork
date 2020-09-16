@@ -8,26 +8,36 @@
     align-items: center;
     margin-right: 300px;
 }
-.input {
-    height: 62px;
-    width: 250px;
-    margin-bottom: 10px;
-    font-family: Ubuntu-Bold;
-    color: #403866;
-    background: #e6e6e6;
-    font-size: 18px;
-    padding: 0 20px 0 38px;
+.login input[type="text"], .password input[type="password"] {
+    border: 0;
+    background-color:  #18191a;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid  #3498db;
+    padding: 14px 10px;
+    width: 240px;
     outline: none;
-    border: none;
-    border-radius: 3px;
+    color: #fff;
+    border-radius: 24px;
+    transition: 0.25s;
 }
+
+.login input[type = "text"]:focus,.password input[type = "password"]:focus{
+    width: 300px;
+    border-color: #2ecc71;
+    background-color: #18191a;
+    background: none;
+  }
 
 .rememberMe{
     display: flex;
     flex-direction: row;
-    padding: 0 0 10px 0;
+    padding: 0 0 12px 100px;
     font-family: Ubuntu-Regular;
     margin-right: 188px;
+    color: #fff;
+    font-size: 20px;
 }
 
 .word {
@@ -35,20 +45,31 @@
 }
 
 .button {
-    margin-top: 20px;
-    height: 62px;
-    width: 310px;
-    font-size: 18px;
-    background-color: #827ffe;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
+    border:0;
+    width: 240px;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #2ecc71;
 }
 
 .formControl.error input,
 .formControl.error textarea {
     border: 2px solid red;
     border-radius: 3px;
+    border-radius: 24px;
+    width: 300px;
 }
 
 .formControl.error span {

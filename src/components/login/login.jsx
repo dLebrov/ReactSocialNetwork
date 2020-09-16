@@ -3,35 +3,30 @@ import {Field, reduxForm} from "redux-form";
 import {createField, Input} from "../common/FromsControls/FormsControls";
 import {required} from "../../utils/validators/validators";
 import {connect} from "react-redux";
-import {login, logout} from "../../redux/auth-reducer";
+import {login} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
 import s from '../common/FromsControls/FormsControls.module.css';
 
 const LoginForm = ({handleSubmit, error, captchaUrl}) => {
     return (
-        <form className={s.formControl} onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <ul className={s.form}>
                 <li>
                     <h1>ВХОД</h1>
                 </li>
-                <li>
-                    <Field className={s.input} placeholder={"Email"}
+                <li className={s.login}>
+                    <Field placeholder={"Email"}
                            name={"email"}
+                           type={"text"}
                            component={Input}
                            validate={[required]}/>
                 </li>
-                <li>
-                    <Field className={s.input} placeholder={"Пароль"}
+                <li className={s.password}>
+                    <Field  placeholder={"Пароль"}
                            name={"password"}
                            type={"password"}
                            component={Input}
                            validate={[required]}/>
-                </li>
-                <li className={s.rememberMe}>
-                    <Field component={Input} name={"rememberMe"} type={"checkbox"}/>
-                    <div className={s.word}>
-                        Remember me
-                    </div>
                 </li>
                 <div>
                     {captchaUrl && <img src={captchaUrl}/>}
@@ -49,7 +44,6 @@ const LoginForm = ({handleSubmit, error, captchaUrl}) => {
             <h1>Пароль: free</h1>
             </div>
         </form>
-        
     )
 }
 
