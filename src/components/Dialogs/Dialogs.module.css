@@ -7,18 +7,22 @@ html {
     scrollbar-width: none; /* Firefox */
 }
 
+.allWiew {
+    margin-left: 15%;
+}
+
 .dialogs {
     display: flex;
     justify-content: center;
     color: #fff;
     border: 2px solid #111111;
-    width: 80%;
+    width: 60%;
     background-color: #242526;
     margin-bottom: 3px;
     border-radius: 10px;
     text-decoration:none;
     overflow-y: auto;
-    height: 400px;
+    height: 600px;
 }
 
 .dialogMain {

@@ -5,18 +5,19 @@ import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import {compose} from "redux";
 import {withAuthRedirect} from "../hoc/withAuthRedirect";
+import Preloader from '../common/preloader/preloader';
 
 
 class ProfileContainer extends React.Component {
 
     refreshProfile () {
-        let userId = this.props.match.params.userId;
-        if (!userId) {
+        this.userId = this.props.match.params.userId;
+        if (!this.userId) {
             // check this section code and refactor
-            userId = this.props.AuthUserId
+            this.userId = this.props.AuthUserId;
         }
-        this.props.getUserProfile(userId);
-        this.props.getStatus (userId);
+        this.props.getUserProfile(this.userId);
+        this.props.getStatus (this.userId);
     }
 
     componentDidMount() {
@@ -29,8 +30,10 @@ class ProfileContainer extends React.Component {
         }
     }
 
-
     render() {
+        if (!this.userId) {
+            return <Preloader />
+        }
         return (
             <Profile {...this.props}
                      isOwner = {!this.props.match.params.userId}

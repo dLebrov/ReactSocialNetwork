@@ -1,10 +1,12 @@
 import React from 'react';
-import {authAPI, securityAPI} from "../api/api";
+import {authAPI, profileAPI, securityAPI} from "../api/api";
 import {stopSubmit} from "redux-form";
+import { getUserProfile } from './profile-reducer';
 
 const SET_USER_DATA = 'SET_USER_DATA';
 const SET_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 const GET_CAPTCHA_URL_SUCCESS = 'GET_CAPTCHA_URL_SUCCESS';
+const SET_MY_PROFILE = 'SET_MY_PROFILE';
 
 let usersState = {
     userId: null,
@@ -12,7 +14,8 @@ let usersState = {
     login: null,
     isFetching: false,
     isAuth: false,
-    captchaUrl: null
+    captchaUrl: null,
+    myData: null
 };
 
 
@@ -29,6 +32,9 @@ const authReducer = (state = usersState, action) => {
                 ...state,
                 isFetching: action.isFetching
             };
+        case SET_MY_PROFILE: {
+            return {...state, myData: action.myProfile}
+        }
         default:
             return state;
     }
@@ -48,6 +54,15 @@ export const getAuthUserData = () => async (dispatch) => {
                 dispatch(setAuthUserData(id, email, login, true));
             }
 };
+
+//myProfile
+export const setMyProfileData = (myProfile) => ({type: SET_MY_PROFILE, myProfile})
+export const getMyProfileData = (myId) => async (dispatch) => {
+    let response = await profileAPI.getProfile(myId);
+        if(response.data) {
+            dispatch(setMyProfileData(response.data.photos));
+        }
+}
 
 export const login = (email, password, rememberMe, captcha) => async (dispatch) => {
     let response = await authAPI.login(email, password, rememberMe, captcha);

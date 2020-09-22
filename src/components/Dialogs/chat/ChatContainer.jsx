@@ -1,32 +1,64 @@
 import React, {useEffect} from 'react';
-import {SendMessageCreator} from "../../../redux/dialogs-reducer";
-import Dialogs from "./../Dialogs";
 import {connect} from "react-redux";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
 import { getAllDialogs, getAllMessages, sendMessageThunk } from '../../../redux/dialogs-reducer';
-import { withRouter, useParams } from 'react-router-dom';
+import { withRouter} from 'react-router-dom';
 import Chat from './Chat';
 import { getUserProfile } from '../../../redux/profile-reducer';
 
 
-const ChatContainer = (props) => {
-    let history = useParams();
-    useEffect (()=> {
-        props.getUserProfile(history.id)}, [history.id]);
-    useEffect (()=> {
-        props.getAllMessages(history.id)}, [history.id,props.allMessages]);
-        
+class ChatContainer extends React.Component {
+
+    constructor (props) {
+        super(props);
+        this.state = {userId: null}
+    }
+
+    componentDidMount() {
+        this.setState({userId: this.props.match.params.id});
+        this.props.getUserProfile(this.props.match.params.id);
+        this.props.getAllMessages(this.props.match.params.id);
+    }
+
+    interval () {
+        this.timer = setInterval (() => {
+            this.props.getAllMessages(this.state.userId);
+        }, 3000)
+    }
+    deleteInterval () {
+        return clearInterval(this.timer);
+    }
+    
+    componentDidUpdate(prevProps) {
+        this.deleteInterval()
+        if (this.props.match.params.id !== this.state.userId) {
+            this.setState({userId: this.props.match.params.id});
+            this.props.getAllMessages(this.state.userId);
+            this.deleteInterval();
+        } else if (this.props.match.params.id === this.state.userId) {
+            this.interval();
+        }
+    }
+
+    componentWillUnmount() {
+        this.deleteInterval();
+        this.state.userId = null;
+    }
+
+    render () {    
     return (
-        <Chat allDialogs={props.allDialogs} id={history.id} allMessages={props.allMessages} sendMessageThunk={props.sendMessageThunk} userData={props.userData} />
+        <Chat allDialogs={this.props.allDialogs} id={this.props.match.params.id} allMessages={this.props.allMessages} sendMessageThunk={this.props.sendMessageThunk} userData={this.props.userData} />
     )
+    }
 }
 
 let mapStateToProps = (state) => {
     return {
         allDialogs: state.dialogsPage.dialogs,
         allMessages: state.dialogsPage.messages,
-        userData: state.profilePage.profile
+        userData: state.profilePage.profile,
+        totalCount: state.dialogsPage.totalCount
 
     }
 }

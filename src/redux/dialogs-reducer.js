@@ -9,7 +9,8 @@ const BEGINING_CHATTING = 'BEGINING_CHATTING';
 let initialState = {
     dialogs: [],
     messages: [],
-    messageForFriend: null
+    messageForFriend: null,
+    totalCount: null
 };
 const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -27,7 +28,9 @@ const dialogsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...state.messages,
-                messages: action.allMessages
+                messages: action.allMessages,
+                ...state.totalCount,
+                totalCount: action.totalCount
             };
         case SEND_MESSAGE:
             let body = action.newMessageBody;
@@ -44,7 +47,7 @@ const dialogsReducer = (state = initialState, action) => {
 
 export const setAllDialogs = (dialogs) =>({type: SET_DIALOGS, dialogs});
 export const SendMessageCreator = (newMessageBody) => ({type: SEND_MESSAGE, newMessageBody});
-export const SetAllMessages = (allMessages) =>({type: SET_ALL_MESSAGES, allMessages});
+export const SetAllMessages = (allMessages, totalCount) =>({type: SET_ALL_MESSAGES, allMessages , totalCount});
 export const beginingChattingAC = (data) =>({type: BEGINING_CHATTING, data});
 
 export const getAllDialogs = () => async (dispatch) => {
@@ -54,7 +57,7 @@ export const getAllDialogs = () => async (dispatch) => {
 
 export const getAllMessages = (id) => async (dispatch) => {
     let response = await dialogsAPI.getAllMessages(id);
-    dispatch(SetAllMessages(response.data.items));
+    dispatch(SetAllMessages(response.data.items, response.data.totalCount));
 }
 
 export const beginingChatting = (id) => async (dispatch) => {
