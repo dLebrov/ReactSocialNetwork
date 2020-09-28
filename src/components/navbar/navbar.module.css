@@ -19,10 +19,6 @@
    transition: .3 linear;
 }
 
-.item a.active {
-    font-size: 25px;
-}
-
 .img {
     width: 20px;
 }

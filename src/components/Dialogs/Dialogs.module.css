@@ -9,26 +9,33 @@ html {
 
 .allWiew {
     margin-left: 15%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .dialogs {
     display: flex;
     justify-content: center;
     color: #fff;
-    border: 2px solid #111111;
     width: 60%;
     background-color: #242526;
     margin-bottom: 3px;
-    border-radius: 10px;
+    border-radius: 15px;
     text-decoration:none;
     overflow-y: auto;
     height: 600px;
 }
 
+.dialogsElemnts {
+    float: right;
+}
+
 .dialogMain {
     color: #fff;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .dialogMain:hover {
@@ -43,25 +50,49 @@ h1 {
     padding: 20px 0 25px 0; 
 }
 
+.dialogChat {
+    display: flex;
+    margin: 20px 0 0 0;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.dialogChat a {
+    text-decoration: none;
+    color: black;
+    padding-top: 15px;
+
+}
+
+.dialogChat img {
+    width: 50px;
+    border-radius: 100%;
+    margin-right: 20px;
+}
 
 .chatDialog {
     text-align: center;
     display: flex;
     justify-content: center;
     color: #fff;
-    border: 2px solid #111111;
-    width: 80%;
+    border: 2px solid #242526;
+    width: 40%;
     background-color: #242526;
-    margin-bottom: 5px;
     border-radius: 10px;
     text-decoration:none;
     padding: 20px 0 20px 0;
     align-items: center;
+    margin-bottom: 5px;
 }
 
-.dialog {
+.dialog { 
+    display: flex;
     margin: 20px 0 20px 0;
     padding-bottom: 5px;
+    background-color: rgb(56, 56, 56);
+    border-radius: 10px;
+    padding: 7px 60px;
+    align-items: center;
 }
 
 .dialog a {
@@ -103,11 +134,16 @@ h1 {
     margin-bottom: 100px;
 }
 
+.chatBlock {
+    display: flex;
+    justify-content: center;
+}
+
 .chat {
-    height: 400px;
-    width: 80%;
+    height: 500px;
+    width: 40%;
     overflow-y: auto;
-    border: 2px solid #111111;
+    border: 2px solid #242526;
     background-color: #242526;
     border-radius: 10px;
 }
@@ -128,13 +164,18 @@ h1 {
     margin-left: 20px;
 }
 
+.messageBlock {
+    display: flex;
+    justify-content: center;
+}
+
 .formMessage {
     display: flex;
     margin-top: 20px;
 }
 
 .formMessage input {
-    width: 820px;
+    width: 385px;
     border-radius: 5px;
     padding: 3px 0 3px 20px; 
     margin-right: 10px;

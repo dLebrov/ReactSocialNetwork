@@ -14,22 +14,22 @@ export const Paginator = (props) => {
     let leftPortionPageNumber = (portionNumber - 1) * props.portionSize + 1;
     let rightPortionPageNumber = portionNumber * props.portionSize;
     return (
-        <div className={style.paginator}>
-            {portionNumber > 1 &&
-            <button className={style.portionNumberLeft} onClick={() => {setPortionNumber(portionNumber -1)}}>➤</button>
-            }
-            {pages
-                .filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
-                .map((p) => {
-                    return <span className={ cn({ [style.selectedPage]:
-                        props.currentPage === p}, style.pageNumber) }
-                                   onClick={(e) => {
-                                       props.onPageChanged(p);
-                                   }}>{p}</span>
-                })}
-            {portionCount > portionNumber &&
-            <button className={style.portionNumberRight} onClick={() => {setPortionNumber(portionNumber + 1)}}>➤</button>
-            }
+            <div className={style.paginator}>
+                {portionNumber > 1 &&
+                <span className={style.portionNumberLeft} onClick={() => {setPortionNumber(portionNumber -1)}}>{"<"}</span>
+                }
+                {pages
+                    .filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
+                    .map((p) => {
+                        return <span className={ cn({ [style.selectedPage]:
+                            props.currentPage === p}, style.pageNumber) }
+                                    onClick={(e) => {
+                                        props.onPageChanged(p);
+                                    }}>{p}</span>
+                    })}
+                {portionCount > portionNumber &&
+                <span className={style.portionNumberRight} onClick={() => {setPortionNumber(portionNumber + 1)}}>{">"}</span>
+                }
         </div>
     )
 };

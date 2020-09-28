@@ -45,20 +45,22 @@ const ProfileInfo = (props) => {
 
     return (
         <div>
-            <div className={s.all}>
-                <div>
-                    <div className={s.description}>
-                        <img onClick={pro1} className={s.logo} id="image"
-                             src={props.profile.photos.large == null ? user : props.profile.photos.large}/>
-                        <input className={s.input} type="file" id="file" onChange={onMainPhotoSelected}/>
+            <div className={s.allProfile}>
+                <div className={s.all}>
+                    <div>
+                        <div className={s.description}>
+                            <img onClick={pro1} className={s.logo} id="image"
+                                src={props.profile.photos.large == null ? user : props.profile.photos.large}/>
+                            <input className={s.input} type="file" id="file" onChange={onMainPhotoSelected}/>
 
-                        {show ? <ProfileDataForm show={show} setShow={setShow} initialValues={allData} profile={props.profile}
-                                                     onSubmit = {onSubmit}/>
-                        : <ProfileData status={props.status}
-                                          updateStatus={props.updateStatus}
-                                          profile={props.profile}
-                                          isOwner={props.isOwner}
-                                          handleShow={handleShow}/>}
+                            {show ? <ProfileDataForm show={show} setShow={setShow} initialValues={allData} profile={props.profile}
+                                                        onSubmit = {onSubmit}/>
+                            : <ProfileData status={props.status}
+                                            updateStatus={props.updateStatus}
+                                            profile={props.profile}
+                                            isOwner={props.isOwner}
+                                            handleShow={handleShow}/>}
+                        </div>
                     </div>
                 </div>
             </div>

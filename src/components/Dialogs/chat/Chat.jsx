@@ -13,19 +13,23 @@ const Dialogs = (props) => {
         props.sendMessageThunk(props.id, values.newMessageBody);
     }
     return (<div> 
-            <div className={s.dialog}>
+            <div className={s.dialogChat}>
                 {props.userData ?
                     <ChatItems name={props.userData.fullName}
                     key={props.userData.userId} id={props.userData.userId}
                     photos={props.userData.photos.small} /> : false}
             </div>
-            <div className={s.chat}>
-                <div className={s.messagesBody}>
-                    {messagesElements}
+            <div className={s.chatBlock}>
+                <div className={s.chat}>
+                    <div className={s.messagesBody}>
+                        {messagesElements}
+                    </div>
                 </div>
             </div>
-            <div className={s.addMessage}>
-                <DialogsReduxForm onSubmit={addNewMessage}/>
+            <div className={s.messageBlock}>
+                <div className={s.addMessage}>
+                    <DialogsReduxForm onSubmit={addNewMessage}/>
+                </div>
             </div>
         </div>
     )

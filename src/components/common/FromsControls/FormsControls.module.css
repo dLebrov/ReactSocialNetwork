@@ -1,12 +1,8 @@
-.formControl {
-}
-
 .form {
     display: flex;
     flex-direction: column;
     list-style-type: none;
     align-items: center;
-    margin-right: 300px;
 }
 .login input[type="text"], .password input[type="password"] {
     border: 0;
@@ -87,5 +83,4 @@
 .data {
     margin-top: 100px;
     text-align: center;
-    margin-right: 270px;
 }
