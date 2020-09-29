@@ -1,36 +1,44 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './users.css';
 import userPhoto from '../img/user.png';
-import {NavLink, useHistory} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import Preloader from "../common/preloader/preloader";
 import {Paginator} from "./paginator";
-import scroll from "./../img/scroll.svg";
+import scroll from "./../img/scroll.png";
 
 
 const Users = (props) => {
-    const history = useHistory();
+
+    let listener = function () {
+        var stop = (document.body.scrollTop || document.documentElement.scrollTop);
+        if (stop > 800) {
+            document.getElementById("scrollToTop").style.opacity = "1";
+        } else {
+            document.getElementById("scrollToTop").style.opacity = "0";
+        }
+        document.getElementById("scrollToTop").onclick = function() {
+            document.getElementById("start").scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              })
+        };
+    }
+    useEffect (()=> {
+        window.addEventListener('scroll', listener);
+
+        return () => {
+            window.removeEventListener ('scroll',listener)
+        }
+    }, [])
+
     if (!props.users) {
         return <Preloader />
     }
-    if (history.location.pathname === "/users") {
-        window.addEventListener('scroll', function() {
-            var stop = (document.body.scrollTop || document.documentElement.scrollTop);
-            if (stop > 800) {
-                document.getElementById("scrollToTop").style.opacity = "1";
-            } else {
-                document.getElementById("scrollToTop").style.opacity = "0";
-            }
-            document.getElementById("scrollToTop").onclick = function() {
-                window.scrollTo(0,0);
-            };
-        });
-    }
-    
 
     return (
     <div className={"friends"}>
         <div>
-            <div className= {"paginator"}>
+            <div className= {"paginator"} id="start">
             <Paginator pageSize={props.pageSize}
                     totalItemsCount={props.totalUserCount}
                     currentPage={props.currentPage}

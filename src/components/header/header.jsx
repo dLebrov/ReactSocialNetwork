@@ -14,7 +14,7 @@ const Header = (props) => {
             <div className={s.loginBlock}>
                 { props.isAuth ?
                     <div className={s.isAuth}>
-                        {props.photos ? <img className={s.photoUser} src={props.photos.small} alt=""/>: <img className={s.photoUser} src={user} alt=""/>}
+                        {props.photos !== null ? props.photos.small !==null ? <img className={s.photoUser} src={props.photos.small} alt=""/>: <img className={s.photoUser} src={user} alt=""/>: null}
                         <div className={s.name}>
                         {props.login}
                         </div>

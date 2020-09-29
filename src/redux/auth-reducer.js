@@ -7,6 +7,7 @@ const SET_USER_DATA = 'SET_USER_DATA';
 const SET_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 const GET_CAPTCHA_URL_SUCCESS = 'GET_CAPTCHA_URL_SUCCESS';
 const SET_MY_PROFILE = 'SET_MY_PROFILE';
+const ZERO_STATE = 'ZERO_STATE';
 
 let usersState = {
     userId: null,
@@ -21,6 +22,8 @@ let usersState = {
 
 const authReducer = (state = usersState, action) => {
     switch (action.type) {
+        case ZERO_STATE: 
+            return usersState;
         case SET_USER_DATA:
         case GET_CAPTCHA_URL_SUCCESS:
             return {
@@ -39,6 +42,11 @@ const authReducer = (state = usersState, action) => {
             return state;
     }
 };
+
+export const zeroState = () =>({ type: ZERO_STATE})
+export const zeroStateThunk = () => (dispatch) => {
+    dispatch(zeroState())
+}
 export const setAuthUserData = (userId, email, login, isAuth) => ({
     type: SET_USER_DATA,
     payload: {userId, email, login, isAuth}
@@ -52,6 +60,7 @@ export const getAuthUserData = () => async (dispatch) => {
             if (response.data.resultCode === 0) {
                 let {id, email, login} = response.data.data;
                 dispatch(setAuthUserData(id, email, login, true));
+                dispatch(getMyProfileData(id))
             }
 };
 
@@ -88,6 +97,7 @@ export const logout = () => async (dispatch) => {
         if (response.data.resultCode === 0) {
             dispatch(setAuthUserData(null, null, null, false));
         }
+        dispatch(zeroStateThunk())
 };
 
 

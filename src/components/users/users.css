@@ -7,8 +7,10 @@
     cursor: pointer;
     opacity: 0;
     float: right;
-    color: #000;
+    display: flex;
+    align-items: center;
     font-size: 100px;
+    transition: all 0.5s ease;
 }
 
 #scrollToTop img {
@@ -41,6 +43,7 @@
     width: 500px;
     height: 300px;
     border-bottom: 1px solid #747474;
+    background-color: #242526;
 
 }
 
