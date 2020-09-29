@@ -5,12 +5,17 @@ import {maxLengthCreator} from "../../../utils/validators/validators";
 import { Input } from '../../common/FromsControls/FormsControls';
 import Message from './../Message/Message';
 import ChatItems from './chatItems/ChatItems';
+import Preloader from '../../common/preloader/preloader';
 
 
 const Dialogs = (props) => {
     let messagesElements = props.allMessages.map(m => <Message message={m.body} senderName={m.senderName} />)
     let addNewMessage = (values) => {
         props.sendMessageThunk(props.id, values.newMessageBody);
+    }
+
+    if (!props.allMessages) {
+        return <Preloader/>
     }
     return (<div> 
             <div className={s.dialogChat}>
