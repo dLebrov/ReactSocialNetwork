@@ -1,6 +1,7 @@
 .header {
-    grid-area: h;
     background-color:#242526;
+    padding: 10px;
+   
 }
 .header img {
     width: 45px;
@@ -12,7 +13,7 @@
 }
 
 .logo {
-    margin: 9px 0 7px 90px;
+    /* margin: 9px 0 7px 90px; */
     -ms-user-select: none;
     -moz-user-select: none;
     -khtml-user-select: none;

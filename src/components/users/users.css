@@ -100,6 +100,9 @@
     margin-top: 10px;
     outline: none;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .unFollowButton:hover {
