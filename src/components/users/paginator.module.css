@@ -1,23 +1,9 @@
 .paginator {
     display: flex;
     justify-content: center;
-    /**
-        * Для эксплорера
-        */
     -ms-user-select: none;
-    /**
-        * Для мозилы
-        */
     -moz-user-select: none;
-
-    /**
-        * Для конкверора
-        */
     -khtml-user-select: none;
-
-    /**
-        * Для Сафари и Хрома
-        */
     -webkit-user-select: none;
 }
 
@@ -67,4 +53,10 @@
 
 .portionNumberRight:hover {
     color: #006adb;
+}
+
+@media (max-width: 1500px) {
+    .paginator {
+        width: 400px;
+    }
 }

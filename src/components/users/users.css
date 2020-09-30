@@ -44,7 +44,6 @@
     height: 300px;
     border-bottom: 1px solid #747474;
     background-color: #242526;
-
 }
 
 .photo {
@@ -80,7 +79,6 @@
     border-radius: 5%;
     outline: none;
     cursor: pointer;
-
 }
 
 .followButton:hover {
@@ -127,14 +125,38 @@
     color: #007bff;
 }
 
-
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 1500px) {
+    .text {
+        margin: 30px 0 0 0;
+        width: 400px;
+        height: 250px;
+    }
+    .photo {
+        height: 130px;
+        width: 130px;
+        border-radius: 100%;
+    }
+    .data {
+        font-size: 20px;
+        width: 200px;
+        word-break: break-all;
+        color: #fff;
+        align-items: center;
+        margin-left: 10px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .followButton {
+        margin-right: 50px;
+        height: 40px;
+        width: 80px;
+    }
+    .unFollowButton {
+        margin-right: 50px;
+        height: 40px;
+        width: 80px;
+    }
+    .buttonMessage {
+        font-size: 23px;
+    }
+}

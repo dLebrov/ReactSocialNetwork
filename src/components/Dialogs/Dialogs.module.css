@@ -61,7 +61,6 @@ h1 {
     text-decoration: none;
     color: black;
     padding-top: 15px;
-
 }
 
 .dialogChat img {
@@ -76,7 +75,7 @@ h1 {
     justify-content: center;
     color: #fff;
     border: 2px solid #242526;
-    width: 40%;
+    width: 500px;
     background-color: #242526;
     border-radius: 10px;
     text-decoration:none;
@@ -112,8 +111,6 @@ h1 {
     padding-top: 26px;
     padding-left: 30px;
     margin-bottom: 100px;
-    
-
 }
 
 .text {
@@ -141,7 +138,7 @@ h1 {
 
 .chat {
     height: 500px;
-    width: 40%;
+    width: 500px;
     overflow-y: auto;
     border: 2px solid #242526;
     background-color: #242526;
@@ -154,10 +151,6 @@ h1 {
 .messagesBody {
     margin-left: 20px;
     margin-top: 20px;
-}
-
-.userName {
-    width: 60px;
 }
 
 .userMessage {
@@ -225,6 +218,45 @@ h1 {
     }
 }
 
+
+@media (max-width: 1500px) {
+    .chatDialog {
+        width: 450px;
+    }
+    .chat {
+        width: 450px;
+    }
+    .formMessage input {
+        width: 340px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .chatDialog {
+        width: 350px;
+    }
+    .chat {
+        width: 350px;
+    }
+    .formMessage input {
+        width: 240px;
+    }
+    .userMessage {
+        font-size: 15px;
+    }
+    .userName {
+        font-size: 15px;
+    }
+    .chatDialog div {
+        font-size: 18px;
+    }
+    .dialogChat img {
+        width: 40px;
+        border-radius: 100%;
+        margin-right: 20px;
+    }
+    
+}
 
 
 
