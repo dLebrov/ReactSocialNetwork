@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ReactSocialNetwork/static/css/main.b0aeba7a.chunk.css",
-    "main.js": "/ReactSocialNetwork/static/js/main.734c2613.chunk.js",
-    "main.js.map": "/ReactSocialNetwork/static/js/main.734c2613.chunk.js.map",
+    "main.css": "/ReactSocialNetwork/static/css/main.cc522470.chunk.css",
+    "main.js": "/ReactSocialNetwork/static/js/main.86062438.chunk.js",
+    "main.js.map": "/ReactSocialNetwork/static/js/main.86062438.chunk.js.map",
     "runtime-main.js": "/ReactSocialNetwork/static/js/runtime-main.ce195610.js",
     "runtime-main.js.map": "/ReactSocialNetwork/static/js/runtime-main.ce195610.js.map",
     "static/css/2.11829350.chunk.css": "/ReactSocialNetwork/static/css/2.11829350.chunk.css",
@@ -16,11 +16,11 @@
     "static/js/5.8bcaa131.chunk.js": "/ReactSocialNetwork/static/js/5.8bcaa131.chunk.js",
     "static/js/5.8bcaa131.chunk.js.map": "/ReactSocialNetwork/static/js/5.8bcaa131.chunk.js.map",
     "index.html": "/ReactSocialNetwork/index.html",
-    "precache-manifest.467b431feb5e618f75be771a30238383.js": "/ReactSocialNetwork/precache-manifest.467b431feb5e618f75be771a30238383.js",
+    "precache-manifest.241a8c0aa75c701bd92d900d0548aa74.js": "/ReactSocialNetwork/precache-manifest.241a8c0aa75c701bd92d900d0548aa74.js",
     "service-worker.js": "/ReactSocialNetwork/service-worker.js",
     "static/css/2.11829350.chunk.css.map": "/ReactSocialNetwork/static/css/2.11829350.chunk.css.map",
     "static/css/4.e175c5e9.chunk.css.map": "/ReactSocialNetwork/static/css/4.e175c5e9.chunk.css.map",
-    "static/css/main.b0aeba7a.chunk.css.map": "/ReactSocialNetwork/static/css/main.b0aeba7a.chunk.css.map",
+    "static/css/main.cc522470.chunk.css.map": "/ReactSocialNetwork/static/css/main.cc522470.chunk.css.map",
     "static/js/2.61485f85.chunk.js.LICENSE.txt": "/ReactSocialNetwork/static/js/2.61485f85.chunk.js.LICENSE.txt",
     "static/media/exit.png": "/ReactSocialNetwork/static/media/exit.9478b23a.png",
     "static/media/message.png": "/ReactSocialNetwork/static/media/message.302bd1c7.png",
@@ -37,7 +37,7 @@
     "static/js/runtime-main.ce195610.js",
     "static/css/2.11829350.chunk.css",
     "static/js/2.61485f85.chunk.js",
-    "static/css/main.b0aeba7a.chunk.css",
-    "static/js/main.734c2613.chunk.js"
+    "static/css/main.cc522470.chunk.css",
+    "static/js/main.86062438.chunk.js"
   ]
 }
