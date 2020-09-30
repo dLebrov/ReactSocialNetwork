@@ -1,0 +1,86 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    align-items: center;
+}
+.login input[type="text"], .password input[type="password"] {
+    border: 0;
+    background-color:  #18191a;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid  #3498db;
+    padding: 14px 10px;
+    width: 240px;
+    outline: none;
+    color: #fff;
+    border-radius: 12px;
+    transition: 0.25s;
+}
+
+.login input[type = "text"]:focus,.password input[type = "password"]:focus{
+    width: 300px;
+    border-color: #2ecc71;
+    background-color: #18191a;
+    background: none;
+    outline: none;
+  }
+
+.rememberMe{
+    display: flex;
+    flex-direction: row;
+    padding: 0 0 12px 100px;
+    font-family: Ubuntu-Regular;
+    margin-right: 188px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.word {
+    margin-left: 10px;
+}
+
+.button {
+    width: 240px;
+    background: none;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #2ecc71;
+}
+
+.button button:focus {
+    outline: none;
+    border: none;
+
+}
+
+.formControl.error input,
+.formControl.error textarea {
+    border: 2px solid red;
+    border-radius: 3px;
+    border-radius: 12px;
+    width: 300px;
+}
+
+.formControl.error span {
+    color: red;
+}
+
+.formSummaryError {
+    padding: 5px;
+    color: red;
+}
+
+.data {
+    margin-top: 100px;
+    text-align: center;
+}

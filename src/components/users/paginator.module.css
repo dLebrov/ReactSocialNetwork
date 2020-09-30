@@ -1,0 +1,62 @@
+.paginator {
+    display: flex;
+    justify-content: center;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+
+.pageNumber {
+    padding: 3px;
+    border-radius: 20%;
+    font-size: 20px;
+    margin: 11px 3px 0 3px;
+    width: 35px;
+    color: #fff;
+    height: 35px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.pageNumber:hover {
+    color: #007bff;
+}
+
+.pageNumber.selectedPage {
+    font-weight: 600;
+}
+
+.portionNumberLeft {
+    background-color: #18191a;
+    font-size: 35px;
+    margin-right: 10px;
+    color: #007bff ;
+    cursor: pointer;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.portionNumberLeft:hover {
+    color: #006adb;
+}
+
+.portionNumberRight {
+    background-color: #18191a;
+    font-size: 35px;
+    margin-left: 10px;
+    color: #007bff ;
+    cursor: pointer;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.portionNumberRight:hover {
+    color: #006adb;
+}
+
+@media (max-width: 1500px) {
+    .paginator {
+        width: 400px;
+    }
+}

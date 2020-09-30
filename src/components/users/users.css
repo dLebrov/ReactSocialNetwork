@@ -1,0 +1,162 @@
+
+#scrollToTop {
+    position: fixed;
+    bottom:400px;
+    right: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0;
+    float: right;
+    display: flex;
+    align-items: center;
+    font-size: 100px;
+    transition: all 0.5s ease;
+}
+
+#scrollToTop img {
+    height: 100px;
+    width: 100px;
+}
+
+.top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.friends {
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 0 0;
+    width: 500px;
+    height: 300px;
+    border-bottom: 1px solid #747474;
+    background-color: #242526;
+}
+
+.photo {
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+}
+
+
+
+.data {
+    font-size: 23px;
+    width: 200px;
+    word-break: break-all;
+    color: #fff;
+    align-items: center;
+    margin-left: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.followButton {
+    margin-top: 10px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #007bff;
+    margin-right: 20px;
+    background: transparent;
+    border: 2px solid #007bff;
+    text-align: center;
+    height: 50px;
+    width: 100px;
+    border-radius: 5%;
+    outline: none;
+    cursor: pointer;
+}
+
+.followButton:hover {
+    color: #fff;
+    background-color: #007bff;
+}
+
+.unFollowButton {
+    text-decoration: none;
+    color: #938d93;
+    background-color: #fff;
+    border: 2px solid #938d93;
+    border-radius: 6%;
+    font-weight: 600;
+    margin-right: 20px;
+    height: 50px;
+    font-size: 17px;
+    width: 100px;
+    margin-top: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+.unFollowButton:hover {
+    background-color: #938d93;
+    color: #fff;
+    border: 2px solid #938d93;
+}
+
+.positionButtonMessage {
+
+}
+
+.buttonMessage {
+    outline: none;
+    border: none;
+    text-decoration: none;
+    background: none;
+    font-size: 25px;
+    color: #fff;
+}
+
+.buttonMessage:hover {
+    color: #007bff;
+}
+
+@media (max-width: 1500px) {
+    .text {
+        margin: 30px 0 0 0;
+        width: 400px;
+        height: 250px;
+    }
+    .photo {
+        height: 130px;
+        width: 130px;
+        border-radius: 100%;
+    }
+    .data {
+        font-size: 20px;
+        width: 200px;
+        word-break: break-all;
+        color: #fff;
+        align-items: center;
+        margin-left: 10px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .followButton {
+        margin-right: 50px;
+        height: 40px;
+        width: 80px;
+    }
+    .unFollowButton {
+        margin-right: 50px;
+        height: 40px;
+        width: 80px;
+    }
+    .buttonMessage {
+        font-size: 23px;
+    }
+}

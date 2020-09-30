@@ -1,0 +1,168 @@
+.logo {
+  margin-top: 13px;
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  position: center;
+  opacity: 1.0;
+  border: 5px solid #18191a;
+}
+
+.logo:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.allProfile {
+  display: flex;
+  justify-content: center;
+}
+
+.all {
+  background-color: #242526;
+  margin-left: 30px;
+  padding-top: 20px;
+  border-radius: 15px;
+  width: 900px;
+}
+
+.description {
+  padding-bottom: 20px;
+  margin-left: 35px;
+  display: flex;
+  color: #fff;
+  justify-content: center;
+}
+
+.input {
+  display: none;
+}
+
+.des {
+  font-family: "Book Antiqua";
+  font-size: 18px;
+  margin: 20px 0 25px 60px;
+  width: 100%;
+}
+
+.des li {
+  list-style-type: none;
+  margin: 12px 0;
+}
+
+.des input {
+  width: 250px;
+  border: 0;
+  border-bottom: 2px solid #38ef7d;
+  outline: 0;
+  font-size: 15px;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+}
+
+.des button {
+  margin-top: 15px;
+  padding: 7px 14px;
+  outline: none;
+  border: none;
+  background-color: #3a3b3c;
+  font-size: 20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.contacts {
+  margin: 12px 0 12px 0;
+}
+
+.contacts a {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.button {
+  padding: 7px 14px;
+  outline: none;
+  border: none;
+  background-color: #3a3b3c;
+  font-size: 20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #67696b;
+}
+
+.buttonModal {
+  outline: none;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  transform: none;
+  height: 40px;
+  width: 120px;
+  font-weight: 500;
+}
+
+.buttonModal:hover {
+  background-color: #0069d9;
+}
+
+.checkBox input {
+  width: 20px;
+  border: 0;
+  border-bottom: 0;
+  outline: 0;
+  font-size: 15px;
+  color: #fff;
+  padding: 7px 0;
+  background: none;
+  margin: 0 auto;
+}
+
+@media (max-width:1470px) {
+  .des {
+    font-size: 16px;
+  }
+  .logo {
+    height: 170px;
+    width: 170px;
+  }
+  .all {
+    width: 850px;
+  }
+  .des button {
+    font-size: 17px;
+  }
+}
+
+@media (max-width:1270px) {
+  .des {
+    font-size: 14px;
+  }
+  .logo {
+    height: 150px;
+    width: 150px;
+  }
+  .all {
+    width: 700px;
+  }
+  .des button {
+    font-size: 15px;
+  }
+}
+
+@media (max-width:1050px) {
+
+  .des {
+    margin: 20px 0 25px 20px;
+  }
+}
+

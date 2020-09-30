@@ -1,0 +1,21 @@
+.img {
+    width: 50px;  
+    border-radius: 100%; 
+}
+
+.button {
+    text-decoration: none;
+    color: rgb(114, 111, 111);
+    border: none;
+    background: none;
+    outline: none;
+    
+}
+
+.button:hover {
+    color: red;
+}
+
+.item {
+    margin: 20px;
+}
