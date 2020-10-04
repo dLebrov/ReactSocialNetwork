@@ -12,12 +12,12 @@ const Header = (props) => {
   return (
     <header className={s.header}>
       <Row>
-        <Col xl={1} lg={1} md={1} sm={1} xs={1}>
+        <Col xl={1} lg={1} md={1} sm={2} xs={2}>
           <Media query="(max-width: 991px)">
             <Navbar isHeader={true} />
           </Media>
         </Col>
-        <Col xl={3} lg={3} md={3} sm={3} xs={3}>
+        <Col xl={3} lg={3} md={3} sm={2} xs={2}>
           <NavLink to="/profile">
             <img className={s.logo} src={myLogo} alt="" />
           </NavLink>

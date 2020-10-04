@@ -1,12 +1,9 @@
-
 .app-wrapper {
 }
 
 .app-wrapper-content {
 }
-
-
-
-
-
-
+.content-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
