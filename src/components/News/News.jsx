@@ -3,9 +3,9 @@ import s from "./News.module.css";
 
 const News = (props) => {
     return (
-        <div>
+        <h1 style={{ color: "white", }}>
             News
-        </div>
+        </h1>
     )
 }
 

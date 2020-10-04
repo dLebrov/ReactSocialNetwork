@@ -3,9 +3,9 @@ import s from "./Music.module.css";
 
 const Music = (props) => {
     return (
-        <div>
+        <h1 style={{ color: "white", }}>
             Music
-        </div>
+        </h1>
     )
 }
 
