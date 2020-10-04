@@ -1,6 +1,7 @@
 .header {
     background-color:#242526;
     width: 100%;
+    overflow: hidden;
 }
 .header img {
     width: 45px;
@@ -17,14 +18,13 @@
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
-    margin-top: 5px;
+    margin-top: 13px;
 }
 
 .loginBlock {
     float: right;
     font-size: 20px;
-    margin-right:  40px;
-    margin-top: 13px;
+    margin: 13px 40px 13px 0;
     color: #fff;
 }
 
@@ -98,6 +98,9 @@
 }
 
 @media (max-width: 420px) {
+    .logo{
+        margin-top: 13px;
+    }
     .header img {
         width: 35px;
         height: 35px;
@@ -130,5 +133,11 @@
     .button img {
         width: 30px;
         height: 30px;
+    }
+}
+
+@media (max-width: 460px) {
+    .loginBlock {
+        margin: 13px 10px 13px 0;
     }
 }

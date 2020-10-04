@@ -33,11 +33,11 @@ const Users = (props) => {
     return <Preloader />;
   }
 
-  const BtnComponent = ({ remove, add, u }) => {
+  const BtnComponent = ({ remove, add, u , btnClass}) => {
     return (
       <div
         disabled={props.followingInProgress.some((id) => id === u.id)}
-        className={"unFollowButton"}
+        className={btnClass}
         onClick={() => {
           remove ? props.unFollow(u.id) : props.follow(u.id);
         }}
@@ -50,9 +50,9 @@ const Users = (props) => {
     return (
       <div className="wrapBtn">
         {u.followed ? (
-          <BtnComponent remove={true} add={false} u={u} />
+          <BtnComponent remove={true} btnClass={"unFollowButton"}add={false} u={u} />
         ) : (
-          <BtnComponent remove={false} add={true} u={u} />
+          <BtnComponent remove={false} btnClass={"followButton"} add={true} u={u} />
         )}
       </div>
     );

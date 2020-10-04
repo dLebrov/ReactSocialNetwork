@@ -69,7 +69,7 @@
   font-size: 25px;
 }
 .menuMobileOpen {
-  position: absolute;
+  position: fixed;
   left: 0;
   background-color: #3c3d3f;
   border-radius: 10px;

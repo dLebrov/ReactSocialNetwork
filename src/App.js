@@ -40,10 +40,10 @@ class App extends React.Component {
                 <HeaderContainer/>
                 <div className="content-wrapper">
                   <Row>
-                      <Col xl={2} lg={2} md={1} sm={1} xs={1}>
+                      <Col xl={2} lg={2} md={1} sm={0} xs={0}>
                           <Navbar/>
                       </Col>
-                      <Col xl={9} lg={9} md={10} sm={10} xs={10}>
+                      <Col xl={9} lg={9} md={10} sm={12} xs={12}>
                           <div className='app-wrapper-content'>
                               <Route exact path='/' render={() => <Redirect to={"/profile"}/> } />
                               <Route path='/profile/:userId?' render={() =>{
@@ -76,7 +76,7 @@ class App extends React.Component {
                               {/*<Route path='*' render={() => <div>404 NOT FOUND</div>}/>*/}
                           </div>
                       </Col>
-                      <Col xl={1} lg={1} md={1} sm={1} xs={1}></Col>
+                      <Col xl={1} lg={1} md={1} sm={0} xs={0}></Col>
                   </Row>
                 </div>
             </div>

@@ -178,7 +178,10 @@
   }
 }
 
-@media (max-width:720px) {
+@media (max-width:768px) {
+  .all {
+    margin-right: 20px;
+  }
   .des {
     font-size: 12px;
   }
@@ -194,7 +197,7 @@
   }
 }
 
-@media (max-width:620px) {
+@media (max-width:500px) {
   .description {
     padding-bottom: 20px;
     margin-left: 35px;
@@ -206,26 +209,14 @@
   }
 
   .logo {
-    align-self: center;
-    margin-right: 50px;
+    align-self: flex-start;
+    margin-left: 50px;
   }
 
-  .button {
-    margin-left: 80px;
-  }
+  
 }
 
-@media (max-width:550px) {
-  .button {
-    margin-left: 70px;
-  }
-}
 
-@media (max-width:510px) {
-  .button {
-    margin-left: 30px;
-  }
-}
 
 @media (max-width:470px) {
   .button {
