@@ -16,6 +16,7 @@
 .allProfile {
   display: flex;
   justify-content: center;
+  margin-top: 30px;
 }
 
 .all {
@@ -160,9 +161,97 @@
 }
 
 @media (max-width:1050px) {
-
   .des {
     margin: 20px 0 25px 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .des li {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 690px) {
+  .des li {
+    max-width: 250px;
+  }
+}
+
+@media (max-width:720px) {
+  .des {
+    font-size: 12px;
+  }
+  .logo {
+    height: 120px;
+    width: 120px;
+  }
+  .all {
+    width: 600px;
+  }
+  .des button {
+    font-size: 13px;
+  }
+}
+
+@media (max-width:620px) {
+  .description {
+    padding-bottom: 20px;
+    margin-left: 35px;
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo {
+    align-self: center;
+    margin-right: 50px;
+  }
+
+  .button {
+    margin-left: 80px;
+  }
+}
+
+@media (max-width:550px) {
+  .button {
+    margin-left: 70px;
+  }
+}
+
+@media (max-width:510px) {
+  .button {
+    margin-left: 30px;
+  }
+}
+
+@media (max-width:470px) {
+  .button {
+    margin-left: 10px;
+  }
+  .des {
+    font-size: 10px;
+  }
+  .des button {
+    font-size: 11px;
+  }
+  .des li {
+    max-width: 200px;
+  }
+}
+
+@media (max-width:420px) {
+  .button {
+    margin-left: 0;
+  }
+}
+
+@media (max-width:410px) {
+  .description {
+    padding: 0;
+    margin: 0;
   }
 }
 

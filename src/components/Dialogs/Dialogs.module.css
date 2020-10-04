@@ -258,6 +258,13 @@ h1 {
     
 }
 
+@media (max-width: 380px) {
+    .formMessage input {
+        width: 180px;
+        font-size: 15px;
+    }
+}
+
 
 
 

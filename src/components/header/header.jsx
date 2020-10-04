@@ -12,17 +12,17 @@ const Header = (props) => {
   return (
     <header className={s.header}>
       <Row>
-        <Col xs={2}>
-          <Media query="(max-width: 700px)">
+        <Col xl={1} lg={1} md={1} sm={1} xs={1}>
+          <Media query="(max-width: 991px)">
             <Navbar isHeader={true} />
           </Media>
         </Col>
-        <Col xs={2}>
+        <Col xl={3} lg={3} md={3} sm={3} xs={3}>
           <NavLink to="/profile">
             <img className={s.logo} src={myLogo} alt="" />
           </NavLink>
         </Col>
-        <Col xs={8}>
+        <Col xl={8} lg={8} md={8} sm={8} xs={8}>
           <div className={s.loginBlock}>
             {props.isAuth ? (
               <div className={s.isAuth}>

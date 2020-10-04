@@ -15,34 +15,34 @@ const Navbar = (props) => {
   const Links = () => {
     return (
       <div className={s.item}>
-        <div className={s.itemHover}>
+        <div className={s.itemHover} onClick={()=> toggleMenu(false)}>
           <NavLink to="/profile" activeClassName={s.active}>
             {" "}
             {/*<img className={s.img} src={profile} /> */} Профиль{" "}
           </NavLink>
         </div>
-        <div className={s.itemHover}>
+        <div className={s.itemHover} onClick={()=> toggleMenu(false)}>
           <NavLink to="News" activeClassName={s.active}>
             {" "}
             {/*<img className={s.img} src={news} />*/} Новости{" "}
           </NavLink>
         </div>
-        <div className={s.itemHover}>
+        <div className={s.itemHover} onClick={()=> toggleMenu(false)}>
           <NavLink to="/Dialogs" activeClassName={s.active}>
             {/*<img className={s.img} src={message} />*/} Сообщения{" "}
           </NavLink>
         </div>
-        <div className={s.itemHover}>
+        <div className={s.itemHover} onClick={()=> toggleMenu(false)}>
           <NavLink to="Music" activeClassName={s.active}>
             {/*<img className={s.img} src={music} /> */}Музыка{" "}
           </NavLink>
         </div>
-        <div className={s.itemHover}>
+        <div className={s.itemHover} onClick={()=> toggleMenu(false)}>
           <NavLink to="/users" activeClassName={s.active}>
             {/*<img className={s.img} src={usersSearch} /> */}Люди{" "}
           </NavLink>
         </div>
-        <div className={s.itemHover}>
+        <div className={s.itemHover} onClick={()=> toggleMenu(false)}>
           <NavLink to="Settings" activeClassName={s.active}>
             {/*<img className={s.setting} src={setting} />*/} Настройки{" "}
           </NavLink>
@@ -54,13 +54,13 @@ const Navbar = (props) => {
   const show = props.isHeader ? true : false;
   return (
     <>
-      <Media query="(min-width: 700px)">
+      <Media query="(min-width: 992px)">
         <nav className={s.nav}>
           <Links />
         </nav>
       </Media>
       {show && (
-        <Media query="(max-width: 700px)">
+        <Media query="(max-width: 992px)">
           <>
             <div className={s.navbarMobile}>
               <div

@@ -1,18 +1,8 @@
+
 .app-wrapper {
-  display: grid;
-  margin: 0 auto;
-  grid-template-rows: 70px 1fr;
-  grid-template-columns: 2fr 9fr;
-  grid-gap: 15px;
-  grid-template-areas:
-          "h h "
-          "n c";
 }
 
 .app-wrapper-content {
-  width: 80%;
-  grid-area: c;
-  margin-top: 20px;
 }
 
 

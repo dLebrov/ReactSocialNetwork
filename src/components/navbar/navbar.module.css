@@ -9,9 +9,13 @@
   border-radius: 3px;
 }
 
+.item {
+  padding: 4px 4px 4px 4px;
+}
+
 .item a {
   color: #fff;
-  margin-left: 20px;
+  margin-left: 10px;
   font-size: 27px;
   text-decoration: none;
   font-weight: 600;
@@ -43,6 +47,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 5px;
 }
 .navbarMobile .hamburg {
   display: flex;
@@ -59,9 +64,15 @@
 .navbarMobile .hamburg .close {
   color: white !important;
 }
+
+.close {
+  font-size: 25px;
+}
 .menuMobileOpen {
   position: absolute;
   left: 0;
-  background: #242526;
+  background-color: #3c3d3f;
+  border-radius: 10px;
   z-index: 99999999999;
+  margin: 20px 0 0 20px;
 }

@@ -3,9 +3,9 @@ import React from 'react';
 
 const Settings = (props) => {
     return (
-        <div>
+        <h1 style={{ color: "white", }}>
             Settings
-        </div>
+        </h1>
     )
 }
 
