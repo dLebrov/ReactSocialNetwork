@@ -37,50 +37,48 @@ class App extends React.Component {
         }
         return (
             <div className='app-wrapper'>
-                <Row>
-                    <Col xl={12} lg={12} md={12} sm={12} xs={12}>
-                        <HeaderContainer/>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col xl={2} lg={2} md={1} sm={1} xs={1}>
-                        <Navbar/>
-                    </Col>
-                    <Col xl={9} lg={9} md={10} sm={10} xs={10}>
-                        <div className='app-wrapper-content'>
-                            <Route exact path='/' render={() => <Redirect to={"/profile"}/> } />
-                            <Route path='/profile/:userId?' render={() =>{
-                                return <React.Suspense fallback={<Preloader/>}>
-                                    <ProfileContainer/>
-                                </React.Suspense>
-                            }}/>
+                <HeaderContainer/>
+                <div className="content-wrapper">
+                  <Row>
+                      <Col xl={2} lg={2} md={1} sm={1} xs={1}>
+                          <Navbar/>
+                      </Col>
+                      <Col xl={9} lg={9} md={10} sm={10} xs={10}>
+                          <div className='app-wrapper-content'>
+                              <Route exact path='/' render={() => <Redirect to={"/profile"}/> } />
+                              <Route path='/profile/:userId?' render={() =>{
+                                  return <React.Suspense fallback={<Preloader/>}>
+                                      <ProfileContainer/>
+                                  </React.Suspense>
+                              }}/>
 
-                            <Route exact path='/dialogs' render={() => {
-                                return <React.Suspense fallback={<Preloader/>}>
-                                <DialogsContainer/>
-                                </React.Suspense>
-                            }}/>
+                              <Route exact path='/dialogs' render={() => {
+                                  return <React.Suspense fallback={<Preloader/>}>
+                                  <DialogsContainer/>
+                                  </React.Suspense>
+                              }}/>
 
-                            <Route exact path={'/dialogs/:id'} render={() => { return <ChatContainer /> }} />
+                              <Route exact path={'/dialogs/:id'} render={() => { return <ChatContainer /> }} />
 
-                            <Route path='/News' render={() => { return <News /> }}/>
+                              <Route path='/News' render={() => { return <News /> }}/>
 
-                            <Route path='/Music' render={() =>{ return <Music />} }/>
+                              <Route path='/Music' render={() =>{ return <Music />} }/>
 
-                            <Route path='/Settings' render={() => { return <Settings />}}/>
+                              <Route path='/Settings' render={() => { return <Settings />}}/>
 
-                            <Route path='/users' render={() =>{
-                                return <React.Suspense fallback={<Preloader/>}>
-                                    <UsersContainer/>
-                                </React.Suspense>
-                            }}/>
+                              <Route path='/users' render={() =>{
+                                  return <React.Suspense fallback={<Preloader/>}>
+                                      <UsersContainer/>
+                                  </React.Suspense>
+                              }}/>
 
-                            <Route path='/login' render={() => <Login/>}/>
-                            {/*<Route path='*' render={() => <div>404 NOT FOUND</div>}/>*/}
-                        </div>
-                    </Col>
-                    <Col xl={1} lg={1} md={1} sm={1} xs={1}></Col>
-                </Row>
+                              <Route path='/login' render={() => <Login/>}/>
+                              {/*<Route path='*' render={() => <div>404 NOT FOUND</div>}/>*/}
+                          </div>
+                      </Col>
+                      <Col xl={1} lg={1} md={1} sm={1} xs={1}></Col>
+                  </Row>
+                </div>
             </div>
         );
     }

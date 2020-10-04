@@ -1,12 +1,13 @@
-
 .app-wrapper {
 }
 
 .app-wrapper-content {
 }
 
-
-
-
-
-
+#root {
+  overflow: hidden;
+}
+.content-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
