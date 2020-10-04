@@ -12,7 +12,7 @@ const LoginForm = ({handleSubmit, error, captchaUrl}) => {
         <form onSubmit={handleSubmit}>
             <div className={s.form}>
                 <div>
-                    <h1>ВХОД</h1>
+                    <h1 style={{ margin: "20px 0 0 0"}}>ВХОД</h1>
                 </div>
                 <div className={s.login}>
                     <Field placeholder={"Email"}
