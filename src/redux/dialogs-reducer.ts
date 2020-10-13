@@ -8,7 +8,7 @@ const BEGINING_CHATTING = 'BEGINING_CHATTING';
 
 type InitialState = {
     dialogs: null | [],
-    messages: null | [string],
+    messages: null | string[],
     messageForFriend: null | string,
     totalCount: null | any
 }

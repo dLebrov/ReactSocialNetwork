@@ -9,7 +9,7 @@ const SAVE_PHOTO_SUCCESS = 'SAVE_PHOTO_SUCCESS';
 
 type InitialState = {
     posts : {id: number, message: string, like: number}[],
-    profile: null | (string | number)[], // refactor this line!!!! it's not true type data.  
+    profile: null | (string | number)[], // refactor this file!!!! it's not true type data.  
     status: string                      // i just want to sleep right now and wrote this for youself
 }
 

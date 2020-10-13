@@ -15,7 +15,7 @@ export type UsersStateType = {
     isFetching: boolean,
     isAuth: boolean,
     captchaUrl: null | string,
-    myData: null | [string]
+    myData: null | (string | number)[]
 }
 
 let usersState: UsersStateType = {
