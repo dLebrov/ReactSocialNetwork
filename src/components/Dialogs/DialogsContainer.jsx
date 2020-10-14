@@ -20,7 +20,6 @@ let mapStateToProps = (state) => {
     return {
         allDialogs: state.dialogsPage.dialogs,
         allMessages: state.dialogsPage.messages
-
     }
 }
 
