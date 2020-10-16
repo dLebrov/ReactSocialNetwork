@@ -5,9 +5,8 @@ const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
 const SEND_MESSAGE = 'SEND_MESSAGE';
 const SET_DIALOGS = 'SET_DIALOGS';
 const SET_ALL_MESSAGES = 'SET_ALL_MESSAGES';
-const BEGINING_CHATTING = 'BEGINING_CHATTING';
 
-type DialogsType = [
+type DialogsType = {
     id: number,
     userName: string,
     hasNewMessages: boolean,
@@ -18,9 +17,9 @@ type DialogsType = [
         small: null | string,
         large: null | string
     }
-]
+} []
 
-type MessagesType = [
+type MessagesType = {
         id: string,
         body: string,
         translatedBody: null | any,
@@ -29,7 +28,7 @@ type MessagesType = [
         senderName: string,
         recipientId: number,
         viewed: boolean
-]
+} []
 
 type InitialState = {
     dialogs: DialogsType | [],
@@ -72,22 +71,35 @@ const dialogsReducer = (state = initialState, action: any) => {
     }
 }
 
-export const setAllDialogs = (dialogs) =>({type: SET_DIALOGS, dialogs});
-export const SendMessageCreator = (newMessageBody) => ({type: SEND_MESSAGE, newMessageBody});
-export const SetAllMessages = (allMessages, totalCount) =>({type: SET_ALL_MESSAGES, allMessages , totalCount});
-export const beginingChattingAC = (data) =>({type: BEGINING_CHATTING, data});
+type SetAllDialogs = {
+    type: typeof SET_DIALOGS,
+    dialogs: DialogsType[]
+}
+type SendMessageCreator = {
+    type: typeof SEND_MESSAGE,
+    newMessageBody: string
+}
+type SetAllMessages = {
+    type: typeof SET_ALL_MESSAGES,
+    allMessages: MessagesType[],
+    totalCount: number
+}
 
-export const getAllDialogs = () => async (dispatch) => {
+export const setAllDialogs = (dialogs: DialogsType[]): SetAllDialogs =>({type: SET_DIALOGS, dialogs});
+export const SendMessageCreator = (newMessageBody: string): SendMessageCreator => ({type: SEND_MESSAGE, newMessageBody});
+export const SetAllMessages = (allMessages: MessagesType[], totalCount: number): SetAllMessages =>({type: SET_ALL_MESSAGES, allMessages , totalCount});
+
+export const getAllDialogs = () => async (dispatch: any) => {
     let response = await dialogsAPI.getDialogs();
     dispatch(setAllDialogs(response.data));
 };
 
-export const getAllMessages = (id) => async (dispatch) => {
+export const getAllMessages = (id: number) => async (dispatch: any) => {
     let response = await dialogsAPI.getAllMessages(id);
     dispatch(SetAllMessages(response.data.items, response.data.totalCount));
 }
 
-export const sendMessageThunk = (id, message) => async (dispatch: any) => {
+export const sendMessageThunk = (id: number, message: string) => async (dispatch: any) => {
     await dialogsAPI.sendMessage(id, message);
     dispatch(getAllMessages(id));
 }

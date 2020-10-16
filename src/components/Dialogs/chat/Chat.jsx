@@ -1,6 +1,6 @@
 import React from 'react';
 import s from "./../Dialogs.module.css";
-import {Field, reduxForm} from "redux-form";
+import {Field, reduxForm, reset} from "redux-form";
 import {maxLengthCreator} from "../../../utils/validators/validators";
 import { Input } from '../../common/FromsControls/FormsControls';
 import Message from './../Message/Message';
@@ -10,8 +10,9 @@ import Preloader from '../../common/preloader/preloader';
 
 const Dialogs = (props) => {
     let messagesElements = props.allMessages.map(m => <Message message={m.body} senderName={m.senderName} />)
-    let addNewMessage = (values) => {
+    let addNewMessage = (values, dispatch) => {
         props.sendMessageThunk(props.id, values.newMessageBody);
+        dispatch(reset("dialogForm"))
     }
 
     if (!props.allMessages) {

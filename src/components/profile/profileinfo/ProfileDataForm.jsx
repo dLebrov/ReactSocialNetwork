@@ -1,9 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 import s from "./../profileinfo/profileinfo.module.css";
 import {createField, Input} from "../../common/FromsControls/FormsControls";
 import {reduxForm} from "redux-form";
 import style from "../../common/FromsControls/FormsControls.module.css";
-import {Button, Modal} from "react-bootstrap";
+import {Modal} from "react-bootstrap";
 import styled from "styled-components";
 
 const ProfileDataForm = (props) => {
