@@ -1,4 +1,3 @@
-import React from 'react';
 import {usersAPI} from "../api/api";
 
 const FOLLOW = `FOLLOW`;
@@ -117,12 +116,12 @@ type ToggleIsFollowingProgress = {
 }
 
 export const followSuccess = (userID: number): FollowSuccess => ({type: FOLLOW, userID});
-export const unFollowSuccess = (userID: number) => ({type: UNFOLLOW, userID});
-export const setUsers = (users: UsersType) => ({type: SET_USERS, users});
-export const setCurrentPage = (currentPage: number) => ({type: SET_CURRENT_PAGE, currentPage});
+export const unFollowSuccess = (userID: number): UnFollowSuccess => ({type: UNFOLLOW, userID});
+export const setUsers = (users: UsersType): SetUsers => ({type: SET_USERS, users});
+export const setCurrentPage = (currentPage: number): SetCurrentPage => ({type: SET_CURRENT_PAGE, currentPage});
 export const setTotalUsersCount = (totalUsersCount: number) => ({type: SET_TOTAL_USERS_COUNT, count: totalUsersCount});
-export const setIsFetching = (isFetching: boolean) => ({type: TOGGLE_IS_FETCHING, isFetching});
-export const toggleIsFollowingProgress = (isFetching: boolean, userId: number) => ({
+export const setIsFetching = (isFetching: boolean): SetIsFetching => ({type: TOGGLE_IS_FETCHING, isFetching});
+export const toggleIsFollowingProgress = (isFetching: boolean, userId: number): ToggleIsFollowingProgress => ({
     type: TOGGLE_IS_FOLLOWING_PROGRESS,
     isFetching,
     userId
