@@ -1,21 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 import "./users.css";
 import userPhoto from "../img/user.png";
 import { NavLink } from "react-router-dom";
 import Preloader from "../common/preloader/preloader";
 import { Paginator } from "./paginator";
 import scroll from "./../img/scroll.png";
+import { UsersType } from "../../redux/users-reducer";
 
-const Users = (props) => {
-  let listener = function () {
+type Props = {
+  currentPage: number,
+  follow: (id: number | null) => void,
+  unFollow: (id: number | null) => void,
+  followingInProgress: Array<number>,
+  id: undefined | number,
+  onPageChanged: (pageNumber: number) => void,
+  pageSize: number,
+  totalUserCount: number,
+  users: UsersType
+}
+
+const Users: React.FC<Props> = (props:Props) => {
+  let listener: ()=> void = function () {
     var stop = document.body.scrollTop || document.documentElement.scrollTop;
     if (stop > 800) {
-      document.getElementById("scrollToTop").style.opacity = "1";
+      (document.getElementById("scrollToTop") as HTMLFormElement).style.opacity = "1";
     } else {
-      document.getElementById("scrollToTop").style.opacity = "0";
+      (document.getElementById("scrollToTop") as HTMLFormElement).style.opacity = "0";
     }
-    document.getElementById("scrollToTop").onclick = function () {
-      document.getElementById("start").scrollIntoView({
+    (document.getElementById("scrollToTop") as HTMLFormElement).onclick = function () {
+      (document.getElementById("start") as HTMLFormElement).scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
@@ -33,24 +46,43 @@ const Users = (props) => {
     return <Preloader />;
   }
 
-  const BtnComponent = ({ remove, add, u , btnClass}) => {
+  type Utype = {
+    followed: boolean,
+    id: null | number,
+    name: null | string,
+    photos: {
+      small: null | string,
+      large: null | string,
+    },
+    status: null | string,
+    uniqueUrlName: null | string
+  }
+
+  type PropsBtnComponent = {
+    remove: boolean,
+    u: Utype,
+    add: any,
+    btnClass: undefined | string
+  }
+
+  const BtnComponent: React.FC<PropsBtnComponent> = ({ remove, add, u , btnClass}: PropsBtnComponent) => {
     return (
-      <div
-        disabled={props.followingInProgress.some((id) => id === u.id)}
+      <button
+        disabled ={props.followingInProgress.some((id) => id === u.id)}
         className={btnClass}
         onClick={() => {
           remove ? props.unFollow(u.id) : props.follow(u.id);
         }}
       >
         {remove ? "Удалить" : "+"}
-      </div>
+      </button>
     );
   };
-  const ButtonRender = (u) => {
+  const ButtonRender: React.FC<Utype> = (u: Utype) => {
     return (
       <div className="wrapBtn">
         {u.followed ? (
-          <BtnComponent remove={true} btnClass={"unFollowButton"}add={false} u={u} />
+          <BtnComponent remove={true} btnClass={"unFollowButton"} add={false} u={u} />
         ) : (
           <BtnComponent remove={false} btnClass={"followButton"} add={true} u={u} />
         )}

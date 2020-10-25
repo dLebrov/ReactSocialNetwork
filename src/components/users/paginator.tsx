@@ -2,9 +2,17 @@ import style from "./paginator.module.css";
 import React, {useState} from "react";
 import cn from "classnames";
 
-export const Paginator = (props) => {
+type Props = {
+    pageSize: number,
+    totalItemsCount: number,
+    currentPage: number,
+    onPageChanged: (pageNumber: number) => void,
+    portionSize: number
+}
+
+export const Paginator = (props: Props) => {
     let pagesCount = Math.ceil(props.totalItemsCount / props.pageSize);
-    let pages = [];
+    let pages: Array<number> = [];
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
@@ -23,6 +31,7 @@ export const Paginator = (props) => {
                     .map((p) => {
                         return <span className={ cn({ [style.selectedPage]:
                             props.currentPage === p}, style.pageNumber) }
+                                    key={p}
                                     onClick={(e) => {
                                         props.onPageChanged(p);
                                     }}>{p}</span>

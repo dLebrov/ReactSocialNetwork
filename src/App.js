@@ -15,15 +15,12 @@ import Preloader from "./components/common/preloader/preloader";
 import ChatContainer from './components/Dialogs/chat/ChatContainer.jsx';
 import { Col, Row } from 'react-bootstrap';
 
-//import ProfileContainer from "./components/profile/ProfileContainer";
-//import DialogsContainer from "./components/Dialogs/DialogsContainer";
+
+
+
+
 const  DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
 const  ProfileContainer = React.lazy(() => import('./components/profile/ProfileContainer'));
-
-
-
-
-
 
 
 class App extends React.Component {

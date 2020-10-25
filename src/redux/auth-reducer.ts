@@ -1,4 +1,3 @@
-import React from 'react';
 import {authAPI, profileAPI, securityAPI} from "../api/api";
 import {stopSubmit} from "redux-form";
 
